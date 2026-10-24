@@ -21,6 +21,7 @@ mod maven;
 mod memory;
 mod owned_processes;
 mod platform;
+mod process_runner;
 mod profile_migration;
 mod project_window_registry;
 mod project_windows;
@@ -163,6 +164,8 @@ fn main() {
             }
         })
         .invoke_handler(tauri::generate_handler![
+            process_runner::resolve_executable,
+            process_runner::run_bounded_process,
             date_time::format_system_date_time,
             agent::agent_open,
             agent::agent_send,

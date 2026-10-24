@@ -8,6 +8,7 @@ import Command, {
 import { useTranslation } from "@/i18n/locale-provider";
 import { useQuickOpen } from "../hooks/use-quick-open";
 import { getWorkspaceSymbolKey } from "../hooks/use-workspace-symbol-search";
+import { ContentMatchListItem } from "./content-match-list-item";
 import { EmptyState } from "./empty-state";
 import { FileCountBadge } from "./file-count-badge";
 import { FileListItem } from "./file-list-item";
@@ -30,6 +31,8 @@ const QuickOpen = () => {
     openBufferFiles,
     recentFilesInResults,
     otherFiles,
+    contentMatches,
+    openContentMatch,
     selectedIndex,
     handleItemSelect,
     handleItemHover,
@@ -52,6 +55,7 @@ const QuickOpen = () => {
   const hasResults =
     openBufferFiles.length > 0 || recentFilesInResults.length > 0 || otherFiles.length > 0;
   const totalResults = openBufferFiles.length + recentFilesInResults.length + otherFiles.length;
+  const hasContentMatches = contentMatches.length > 0;
   const symbolSearchQuery = isSymbolMode || isWorkspaceSymbolMode ? query.slice(1).trim() : query;
 
   return (
@@ -84,12 +88,19 @@ const QuickOpen = () => {
               : t("quickOpen.symbolsCount", { count: workspaceSymbols.length })}
           </CommandHeaderBadge>
         ) : (
-          <FileCountBadge
-            totalFiles={files.length}
-            resultCount={totalResults}
-            hasQuery={!!debouncedQuery}
-            isLoading={isLoadingFiles}
-          />
+          <>
+            <FileCountBadge
+              totalFiles={files.length}
+              resultCount={totalResults}
+              hasQuery={!!debouncedQuery}
+              isLoading={isLoadingFiles}
+            />
+            {hasContentMatches && (
+              <CommandHeaderBadge>
+                {t("quickOpen.contentMatchesCount", { count: contentMatches.length })}
+              </CommandHeaderBadge>
+            )}
+          </>
         )}
       </CommandHeader>
 
@@ -133,7 +144,7 @@ const QuickOpen = () => {
               />
             ))
           )
-        ) : !hasResults ? (
+        ) : !hasResults && !hasContentMatches ? (
           <EmptyState
             isLoadingFiles={isLoadingFiles}
             isIndexing={isIndexing}
@@ -195,6 +206,29 @@ const QuickOpen = () => {
                       index={globalIndex}
                       isSelected={globalIndex === selectedIndex}
                       onClick={handleItemSelect}
+                      onMouseEnter={handleItemHover}
+                      rootFolderPath={rootFolderPath}
+                      searchQuery={debouncedQuery}
+                    />
+                  );
+                })}
+              </div>
+            )}
+
+            {hasContentMatches && (
+              <div className="p-0">
+                {contentMatches.map((match, index) => {
+                  // Content matches follow the filename results in navigation order.
+                  const globalIndex = totalResults + index;
+                  return (
+                    <ContentMatchListItem
+                      key={`content-${match.filePath}:${match.line}:${match.column}`}
+                      match={match}
+                      index={globalIndex}
+                      isSelected={globalIndex === selectedIndex}
+                      onClick={(selected) =>
+                        openContentMatch(selected.filePath, selected.line, selected.column)
+                      }
                       onMouseEnter={handleItemHover}
                       rootFolderPath={rootFolderPath}
                       searchQuery={debouncedQuery}

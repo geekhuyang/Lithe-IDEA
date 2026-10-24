@@ -30,6 +30,10 @@ import { prewarmCommonLanguageTokenizers } from "@/features/editor/engines/monac
 import { ReferencesPopover } from "@/features/references/components/references-popover";
 import { closeNotificationsToolWindow } from "@/features/notifications/actions/notifications-tool-window-actions";
 import { NotificationsToolWindow } from "@/features/notifications/components/notifications-tool-window";
+import {
+  findExtensionToolWindow,
+} from "@/features/layout/services/extension-tool-window-registry";
+import { ExtensionToolWindow } from "@/features/layout/components/extension-tool-window";
 import { getInternalTabDragData } from "@/features/tabs/utils/internal-tab-drag";
 import { PendingBufferCloseDialog } from "@/features/window/components/pending-buffer-close-dialog";
 import TitleBarWithSettings from "../../window/components/title-bar/title-bar";
@@ -112,7 +116,13 @@ export function MainLayout() {
   const isMavenVisible = isRightSidebarVisible && isMavenSelected;
   const isAgentSelected = activeRightSidebarView === "agent";
   const isAgentVisible = isRightSidebarVisible && isAgentSelected;
-  const isRightToolWindowVisible = isNotificationsVisible || isMavenVisible || isAgentVisible;
+  const extensionToolWindow = findExtensionToolWindow(activeRightSidebarView);
+  const isExtensionToolWindowVisible = isRightSidebarVisible && extensionToolWindow !== undefined;
+  const isRightToolWindowVisible =
+    isNotificationsVisible ||
+    isMavenVisible ||
+    isAgentVisible ||
+    isExtensionToolWindowVisible;
   const vimRelativeLineNumbers = useSettingsStore((state) => state.settings.vimRelativeLineNumbers);
   const relativeLineNumbers = useVimStore.use.relativeLineNumbers();
   const { setRelativeLineNumbers } = useVimStore.use.actions();
@@ -338,6 +348,9 @@ export function MainLayout() {
                       <Suspense fallback={null}>
                         <AgentPane onClose={closeAgentToolWindow} />
                       </Suspense>
+                    ) : null}
+                    {extensionToolWindow ? (
+                      <ExtensionToolWindow isVisible={isExtensionToolWindowVisible} />
                     ) : null}
                   </ResizablePane>
                 </div>

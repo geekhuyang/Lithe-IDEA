@@ -7,13 +7,13 @@ import {
   KEY_ESCAPE,
   KEY_K,
 } from "../constants/keyboard-keys";
-import type { FileItem } from "../types/quick-open.types";
+import type { QuickOpenNavigationItem } from "../types/quick-open.types";
 
 interface UseKeyboardNavigationProps {
   isVisible: boolean;
-  allResults: FileItem[];
+  allResults: readonly QuickOpenNavigationItem[];
   onClose: () => void;
-  onSelect: (path: string) => void;
+  onSelect: (item: QuickOpenNavigationItem) => void;
 }
 
 export const useKeyboardNavigation = ({
@@ -24,23 +24,23 @@ export const useKeyboardNavigation = ({
 }: UseKeyboardNavigationProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const selectedPathRef = useRef<string | null>(null);
-  const resultIndexByPath = useMemo(() => {
-    const indexByPath = new Map<string, number>();
+  const selectedIdRef = useRef<string | null>(null);
+  const resultIndexById = useMemo(() => {
+    const indexById = new Map<string, number>();
     for (let index = 0; index < allResults.length; index++) {
       const result = allResults[index];
       if (result) {
-        indexByPath.set(result.path, index);
+        indexById.set(result.id, index);
       }
     }
-    return indexByPath;
+    return indexById;
   }, [allResults]);
 
   useEffect(() => {
-    selectedPathRef.current = allResults[selectedIndex]?.path || null;
+    selectedIdRef.current = allResults[selectedIndex]?.id || null;
   }, [allResults, selectedIndex]);
 
-  // Preserve selection as results change by matching selected path first,
+  // Preserve selection as results change by matching the selected id first,
   // then clamping to valid range as a fallback.
   useEffect(() => {
     setSelectedIndex((previousIndex) => {
@@ -48,9 +48,9 @@ export const useKeyboardNavigation = ({
         return 0;
       }
 
-      const selectedPath = selectedPathRef.current;
-      if (selectedPath) {
-        const nextIndex = resultIndexByPath.get(selectedPath) ?? -1;
+      const selectedId = selectedIdRef.current;
+      if (selectedId) {
+        const nextIndex = resultIndexById.get(selectedId) ?? -1;
         if (nextIndex >= 0) {
           return nextIndex;
         }
@@ -58,7 +58,7 @@ export const useKeyboardNavigation = ({
 
       return Math.min(previousIndex, allResults.length - 1);
     });
-  }, [allResults, resultIndexByPath]);
+  }, [allResults, resultIndexById]);
 
   useEffect(() => {
     if (isVisible) {
@@ -93,7 +93,7 @@ export const useKeyboardNavigation = ({
         event.preventDefault();
         const selectedResult = allResults[selectedIndex] ?? allResults[0];
         if (selectedResult) {
-          onSelect(selectedResult.path);
+          onSelect(selectedResult);
         }
       }
     },

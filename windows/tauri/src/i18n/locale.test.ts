@@ -74,8 +74,13 @@ describe("Windows display language", () => {
     expect(translate("terminal.copySelection")).toBe("复制所选内容");
     expect(translate("files.reveal")).toBe("在资源管理器中显示");
     expect(createTranslator("en-US")("files.reveal")).toBe("Reveal in File Explorer");
-    expect(translate("quickOpen.searchFiles")).toBe("输入以搜索文件...");
+    expect(translate("quickOpen.searchFiles")).toBe("搜索文件和内容...");
     expect(translate("quickOpen.filesCount", { count: 66 })).toBe("66 个文件");
+    expect(translate("quickOpen.contentMatchesCount", { count: 3 })).toBe("3 处内容匹配");
+    expect(translate("quickOpen.matchLine", { line: 12 })).toBe("第 12 行");
+    expect(translate("codebuddy.cliReady")).toBe("CodeBuddy CLI 已就绪");
+    expect(translate("codebuddy.cliMissingHint")).toContain("npm install -g");
+    expect(createTranslator("en-US")("codebuddy.cliMissingHint")).toContain("npm install -g");
     expect(translate("tabs.pin")).toBe("固定标签页");
     expect(translate("tabs.closeOthers")).toBe("关闭其他");
     expect(translate("editor.aiInlineEdit")).toBe("AI 行内编辑");

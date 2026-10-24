@@ -1,0 +1,26 @@
+{
+  "id": "codebuddy-plugin-chat-and-commit",
+  "area": "AI",
+  "group": "AI 插件",
+  "capability": "CodeBuddy 官方插件：右侧活动栏独立的 CodeBuddy 对话工具窗，以及 Git 提交面板中调用本机 CodeBuddy CLI 生成提交信息的按钮；CLI 经 PATH 或显式路径发现，有界执行（无 shell、超时、输出上限）",
+  "macos": {
+    "evidence": [
+      "macos/Sources/Lithe"
+    ],
+    "implementationStatus": "platform-specific",
+    "verificationStatus": "not-applicable"
+  },
+  "windows": {
+    "evidence": [
+      "Plugins/win/Official/CodeBuddy",
+      "windows/tauri/src/features/layout/services/extension-tool-window-registry.ts",
+      "windows/tauri/src/features/layout/components/extension-tool-window.tsx",
+      "windows/tauri/src/features/git/services/commit-draft-action-registry.ts",
+      "windows/tauri/src-tauri/src/process_runner.rs"
+    ],
+    "implementationStatus": "implemented",
+    "verificationStatus": "pending"
+  },
+  "owner": "AI",
+  "verification": "在扩展页安装并启用 CodeBuddy，确认右侧活动栏出现 CodeBuddy 按钮并能打开/关闭对话工具窗；安装 CodeBuddy CLI（npm install -g @tencent-ai/codebuddy-code）后发送消息得到回复，未安装时显示安装指引且可在设置中指定 CLI 路径。在 Git 提交面板勾选文件后点击 CodeBuddy 按钮，确认生成的提交信息写入草稿、已有草稿时弹出替换确认、切换选择后旧结果不覆盖新草稿。CLI 缺失、超时（两分钟）与空输出均有明确错误提示。"
+}

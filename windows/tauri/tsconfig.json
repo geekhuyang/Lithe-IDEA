@@ -20,6 +20,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@lithe/v0/*": ["../../Plugins/win/Official/V0Support/*"],
+      "@lithe/codebuddy/*": ["../../Plugins/win/Official/CodeBuddy/*"],
       "@tauri-apps/plugin-http": ["./node_modules/@tauri-apps/plugin-http"],
       "react": ["./node_modules/@types/react"],
       "react/*": ["./node_modules/@types/react/*"],
@@ -29,7 +30,7 @@
       "monaco-editor/*": ["./node_modules/monaco-editor/*"]
     }
   },
-  "include": ["src", "../../Plugins/win/Official/V0Support"],
+  "include": ["src", "../../Plugins/win/Official/V0Support", "../../Plugins/win/Official/CodeBuddy"],
   "exclude": ["**/*.stories.tsx", "**/*.stories.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

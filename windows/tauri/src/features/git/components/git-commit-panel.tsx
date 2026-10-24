@@ -18,6 +18,7 @@ import type { TranslationKey } from "@/i18n/locale";
 import { useSettingsStore } from "@/features/settings/stores/settings.store";
 import { useTranslation } from "@/i18n/locale-provider";
 import { Button } from "@/ui/button";
+import { Spinner } from "@/ui/spinner";
 import { SidebarComposerBody } from "@/ui/sidebar";
 import Textarea from "@/ui/textarea";
 import { cn } from "@/utils/cn";
@@ -30,6 +31,10 @@ import {
   generateCommitMessage,
 } from "../services/ai-commit-service";
 import { generateCommitDraft } from "../services/ai-commit-workflow";
+import {
+  useCommitDraftActions,
+  type RegisteredCommitDraftAction,
+} from "../services/commit-draft-action-registry";
 import { showConfirmDialog } from "@/ui/dialog";
 import { useUIState } from "@/features/window/stores/ui-state.store";
 import {
@@ -150,6 +155,9 @@ const GitCommitPanel = ({
   const isCurrentWorkspace = workspaceReady && workspaceId === activeWorkspaceId;
   const setDraftOwner = useWorkspaceCommitStore((state) => state.setDraftOwner);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [runningDraftActionId, setRunningDraftActionId] = useState<string | null>(null);
+  const draftActionAbortRef = useRef<AbortController | null>(null);
+  const commitDraftActions = useCommitDraftActions();
   const [error, setError] = useState<string | null>(null);
   // Keyboard submission keeps actionable validation even while empty buttons are disabled.
   const [commitHint, setCommitHint] = useState<{ noChanges: boolean; noMessage: boolean } | null>(
@@ -190,6 +198,35 @@ const GitCommitPanel = ({
       if (generationRef.current === controller) {
         generationRef.current = null;
         setIsGenerating(false);
+      }
+    }
+  };
+
+  // Extension-contributed draft actions reuse the same workflow as the built-in
+  // AI button so replacement confirmation, staleness and fingerprints apply.
+  const handleCommitDraftAction = async (action: RegisteredCommitDraftAction) => {
+    if (!repoPath || selectedFilesCount === 0 || runningDraftActionId || isGenerating) return;
+    const controller = new AbortController();
+    draftActionAbortRef.current = controller;
+    setRunningDraftActionId(action.id);
+    setError(null);
+    try {
+      await generateCommitDraft({
+        signal: controller.signal,
+        current: () => currentDraft.current,
+        readFiles: () => collectCommitFiles(repoPath, selectedFiles, controller.signal),
+        generate: (files) => action.generate({ repoPath, files, signal: controller.signal }),
+        confirmReplace: () => showConfirmDialog(t("aiCommit.replace")),
+        apply: (message) => currentDraft.current.apply(message),
+      });
+    } catch (error) {
+      if (!controller.signal.aborted) {
+        setError(error instanceof Error ? error.message : String(error));
+      }
+    } finally {
+      if (draftActionAbortRef.current === controller) {
+        draftActionAbortRef.current = null;
+        setRunningDraftActionId(null);
       }
     }
   };
@@ -340,6 +377,27 @@ const GitCommitPanel = ({
             <span>AI</span>
           </Button>
         )}
+        {commitDraftActions.map((action) => {
+          const isRunning = runningDraftActionId === action.id;
+          return (
+            <Button
+              key={action.id}
+              type="button"
+              size="xs"
+              variant="default"
+              className={composerButtonClassName}
+              onClick={() => void handleCommitDraftAction(action)}
+              disabled={
+                selectedFilesCount === 0 || isCommitting || isGenerating || Boolean(runningDraftActionId)
+              }
+              tooltip={action.title}
+              aria-label={action.title}
+            >
+              {isRunning ? <Spinner label={action.title} compact /> : action.icon}
+              <span>{action.title}</span>
+            </Button>
+          );
+        })}
         <span
           className="git-commit-count text-subtle-foreground"
           title={commitLegend.map((chunk) => `${chunk.value} ${t(chunk.labelKey)}`).join(", ")}

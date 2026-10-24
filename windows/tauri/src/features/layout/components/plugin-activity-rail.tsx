@@ -1,5 +1,7 @@
 import { useBufferStore } from "@/features/editor/stores/buffer.store";
 import { AgentTrigger } from "@/features/agent/components/agent-trigger";
+import { applyRightToolWindowIntent } from "@/features/layout/actions/right-tool-window-actions";
+import { useExtensionToolWindows } from "@/features/layout/services/extension-tool-window-registry";
 import { toggleMavenPane } from "@/features/keymaps/commands/view-command-actions";
 import { MavenIcon } from "@/features/maven/components/maven-icon";
 import { useMavenStore } from "@/features/maven/stores/maven.store";
@@ -39,6 +41,9 @@ export function PluginActivityRail() {
   const isMavenActive = useUIState(
     (state) => state.isRightSidebarVisible && state.activeRightSidebarView === "maven",
   );
+  const isRightSidebarVisible = useUIState((state) => state.isRightSidebarVisible);
+  const activeRightSidebarView = useUIState((state) => state.activeRightSidebarView);
+  const extensionToolWindows = useExtensionToolWindows();
   const activityViewsLabel = t("workbench.activityViews");
   const extensionsLabel = t("extensions.title");
   const mavenLabel = t("workbench.maven");
@@ -80,6 +85,26 @@ export function PluginActivityRail() {
           <MavenIcon className="size-5" />
         </Button>
       ) : null}
+      {extensionToolWindows.map((toolWindow) => {
+        const isActive = isRightSidebarVisible && activeRightSidebarView === toolWindow.id;
+        return (
+          <Button
+            key={toolWindow.id}
+            type="button"
+            variant="ghost"
+            size="icon-sm"
+            active={isActive}
+            tooltip={toolWindow.title}
+            tooltipSide="left"
+            aria-label={toolWindow.title}
+            aria-pressed={isActive}
+            className={STRIPE_BUTTON_CLASS_NAME}
+            onClick={() => applyRightToolWindowIntent(toolWindow.id, "toggle")}
+          >
+            {toolWindow.icon ?? <PuzzlePieceIcon className="size-5" />}
+          </Button>
+        );
+      })}
     </aside>
   );
 }

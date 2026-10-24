@@ -289,6 +289,10 @@ jobs:
           # stays covered instead of only its formatter.
           node .agents/skills/write-stable-tests/scripts/run-bun-tests-with-timing.mjs --suite-timeout-ms 60000 --report .artifacts/test-stability/windows-notifications.json -- src/features/notifications
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          # Extension tool window and commit draft action registries back the
+          # CodeBuddy plugin; the plugin package covers its own prompt rules.
+          node .agents/skills/write-stable-tests/scripts/run-bun-tests-with-timing.mjs --suite-timeout-ms 60000 --report .artifacts/test-stability/windows-plugin-contributions.json -- src/features/layout/services/extension-tool-window-registry.test.ts src/features/git/services/commit-draft-action-registry.test.ts ../../Plugins/win/Official/CodeBuddy/services/codebuddy-prompt.test.ts
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Test Agent panel and capability gate
         shell: pwsh
@@ -557,7 +561,7 @@ jobs:
 
       - name: Test quick-open file search, number input steppers and editor settings route
         shell: pwsh
-        run: node .agents/skills/write-stable-tests/scripts/run-bun-tests-with-timing.mjs --suite-timeout-ms 60000 --report .artifacts/test-stability/windows-quick-open-number-input.json -- src/features/quick-open/hooks/use-file-loader.test.tsx src/features/quick-open/hooks/use-file-search.test.tsx src/ui/number-input.test.tsx src/features/settings/components/editor-settings-routing.test.tsx
+        run: node .agents/skills/write-stable-tests/scripts/run-bun-tests-with-timing.mjs --suite-timeout-ms 60000 --report .artifacts/test-stability/windows-quick-open-number-input.json -- src/features/quick-open/hooks/use-file-loader.test.tsx src/features/quick-open/hooks/use-file-search.test.tsx src/features/quick-open/hooks/use-content-matches.test.tsx src/ui/number-input.test.tsx src/features/settings/components/editor-settings-routing.test.tsx
 
       - name: Test wheel scroll animation and container wheel ownership
         shell: pwsh

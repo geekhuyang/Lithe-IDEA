@@ -4,6 +4,7 @@ import { javaEntryChinese, javaEntryEnglish } from "./java-entry-creation";
 import { changelistsChinese, changelistsEnglish } from "./git-changelists";
 import { workspaceCommitChinese, workspaceCommitEnglish } from "./git-workspace-commit";
 import { aiCommitChinese, aiCommitEnglish } from "./ai-commit";
+import { codebuddyChinese, codebuddyEnglish } from "./codebuddy";
 import { updateChannelEnglish, updateChannelChinese } from "./update-channel";
 import { agentParityEnglish, agentParityChinese } from "./agent-parity";
 import { runningServicesChinese, runningServicesEnglish } from "./running-services";
@@ -20,6 +21,7 @@ const catalogs = {
     ...javaEntryEnglish,
     ...panelParityEnglish,
     ...aiCommitEnglish,
+    ...codebuddyEnglish,
     ...workspaceCommitEnglish,
     ...changelistsEnglish,
     ...updateChannelEnglish,
@@ -3898,12 +3900,14 @@ const catalogs = {
     "menu.reportBug": "Report a Bug",
     "menu.requestFeature": "Request a Feature",
     "menu.checkForUpdates": "Check for Updates",
-    "quickOpen.searchFiles": "Type to search files...",
+    "quickOpen.searchFiles": "Search files and content...",
     "quickOpen.searchSymbols": "Type to filter symbols...",
     "quickOpen.searchWorkspaceSymbols": "Type to search symbols across the project...",
     "quickOpen.filesCount": "{count} files",
     "quickOpen.fileCountOne": "{count} file",
     "quickOpen.symbolsCount": "{count} symbols",
+    "quickOpen.contentMatchesCount": "{count} text matches",
+    "quickOpen.matchLine": "Line {line}",
     "quickOpen.openFolder": "Open a folder to start searching files",
     "quickOpen.noMatch": "No matching files found",
     "quickOpen.searching": "Searching...",
@@ -4915,6 +4919,7 @@ const catalogs = {
     ...javaEntryChinese,
     ...panelParityChinese,
     ...aiCommitChinese,
+    ...codebuddyChinese,
     ...workspaceCommitChinese,
     ...changelistsChinese,
     ...updateChannelChinese,
@@ -8641,12 +8646,14 @@ const catalogs = {
     "menu.reportBug": "报告 Bug",
     "menu.requestFeature": "请求新功能",
     "menu.checkForUpdates": "检查更新",
-    "quickOpen.searchFiles": "输入以搜索文件...",
+    "quickOpen.searchFiles": "搜索文件和内容...",
     "quickOpen.searchSymbols": "输入以筛选符号...",
     "quickOpen.searchWorkspaceSymbols": "在项目中搜索符号...",
     "quickOpen.filesCount": "{count} 个文件",
     "quickOpen.fileCountOne": "{count} 个文件",
     "quickOpen.symbolsCount": "{count} 个符号",
+    "quickOpen.contentMatchesCount": "{count} 处内容匹配",
+    "quickOpen.matchLine": "第 {line} 行",
     "quickOpen.openFolder": "打开文件夹后再搜索文件",
     "quickOpen.noMatch": "未找到匹配的文件",
     "quickOpen.searching": "正在搜索...",

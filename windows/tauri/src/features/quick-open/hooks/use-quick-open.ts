@@ -12,6 +12,7 @@ import { useCenterCursor } from "@/features/editor/hooks/use-center-cursor";
 import { calculateOffsetFromContentPosition } from "@/features/editor/utils/position";
 import { getBaseName } from "@/utils/path-helpers";
 import { SEARCH_DEBOUNCE_DELAY } from "../constants/limits";
+import { useContentMatches } from "./use-content-matches";
 import { useFileLoader } from "./use-file-loader";
 import { useFileSearch } from "./use-file-search";
 import { useKeyboardNavigation } from "./use-keyboard-navigation";
@@ -21,6 +22,7 @@ import {
   type WorkspaceSymbolItem,
   useWorkspaceSymbolSearch,
 } from "./use-workspace-symbol-search";
+import type { QuickOpenNavigationItem } from "../types/quick-open.types";
 
 export const useQuickOpen = () => {
   const isQuickOpenVisible = useUIState((state) => state.isQuickOpenVisible);
@@ -57,6 +59,12 @@ export const useQuickOpen = () => {
       hasLoadedFiles,
       rootFolderPath,
     },
+  );
+
+  // Symbol modes own the list, so file-content matches only run for plain queries.
+  const { matches: contentMatches } = useContentMatches(
+    debouncedQuery,
+    isQuickOpenVisible && !isSymbolMode && !isWorkspaceSymbolMode,
   );
 
   // Symbol search (only active in @ mode)
@@ -142,6 +150,20 @@ export const useQuickOpen = () => {
     [handleFileSelect, onClose, addOrUpdateRecentFile, rootFolderPath],
   );
 
+  const openContentMatch = useCallback(
+    (path: string, line: number, column: number) => {
+      const fileName = getBaseName(path, path);
+      addOrUpdateRecentFile(path, fileName, {
+        workspacePath: rootFolderPath ?? null,
+        external: false,
+      });
+      // handleFileSelect expects one-based line/column; content matches already carry them.
+      void handleFileSelect(path, false, line, column, undefined, false);
+      onClose();
+    },
+    [handleFileSelect, onClose, addOrUpdateRecentFile, rootFolderPath],
+  );
+
   const allResults = useMemo(
     () => [...openBufferFiles, ...recentFilesInResults, ...otherFiles],
     [openBufferFiles, recentFilesInResults, otherFiles],
@@ -203,20 +225,78 @@ export const useQuickOpen = () => {
     [workspaceSymbolByPath, handleWorkspaceSymbolSelect],
   );
 
+  const handleResultSelect = useCallback(
+    (item: QuickOpenNavigationItem) => {
+      if (item.line !== undefined && item.column !== undefined) {
+        openContentMatch(item.path, item.line, item.column);
+        return;
+      }
+      if (isSymbolMode) {
+        symbolSelectAdapter(item.path);
+        return;
+      }
+      if (isWorkspaceSymbolMode) {
+        workspaceSymbolSelectAdapter(item.path);
+        return;
+      }
+      handleItemSelect(item.path);
+    },
+    [
+      handleItemSelect,
+      isSymbolMode,
+      isWorkspaceSymbolMode,
+      openContentMatch,
+      symbolSelectAdapter,
+      workspaceSymbolSelectAdapter,
+    ],
+  );
+
+  const fileNavigationItems = useMemo<QuickOpenNavigationItem[]>(
+    () => allResults.map((file) => ({ id: file.path, path: file.path })),
+    [allResults],
+  );
+
+  const contentNavigationItems = useMemo<QuickOpenNavigationItem[]>(
+    () =>
+      contentMatches.map((match) => ({
+        id: `${match.filePath}:${match.line}:${match.column}`,
+        path: match.filePath,
+        line: match.line,
+        column: match.column,
+      })),
+    [contentMatches],
+  );
+
+  const symbolNavigationItems = useMemo<QuickOpenNavigationItem[]>(
+    () => symbolResultsAsFiles.map((file) => ({ id: file.path, path: file.path })),
+    [symbolResultsAsFiles],
+  );
+
+  const workspaceSymbolNavigationItems = useMemo<QuickOpenNavigationItem[]>(
+    () => workspaceSymbolResultsAsFiles.map((file) => ({ id: file.path, path: file.path })),
+    [workspaceSymbolResultsAsFiles],
+  );
+
+  // Content matches follow the filename results so opening a file by name stays first.
+  const navigationItems = useMemo<QuickOpenNavigationItem[]>(() => {
+    if (isSymbolMode) return symbolNavigationItems;
+    if (isWorkspaceSymbolMode) return workspaceSymbolNavigationItems;
+    return [...fileNavigationItems, ...contentNavigationItems];
+  }, [
+    contentNavigationItems,
+    fileNavigationItems,
+    isSymbolMode,
+    isWorkspaceSymbolMode,
+    symbolNavigationItems,
+    workspaceSymbolNavigationItems,
+  ]);
+
   const { selectedIndex, setSelectedIndex, scrollContainerRef, handleInputKeyDown } =
     useKeyboardNavigation({
       isVisible: isQuickOpenVisible,
-      allResults: isSymbolMode
-        ? symbolResultsAsFiles
-        : isWorkspaceSymbolMode
-          ? workspaceSymbolResultsAsFiles
-          : allResults,
+      allResults: navigationItems,
       onClose,
-      onSelect: isSymbolMode
-        ? symbolSelectAdapter
-        : isWorkspaceSymbolMode
-          ? workspaceSymbolSelectAdapter
-          : handleItemSelect,
+      onSelect: handleResultSelect,
     });
 
   const handleItemHover = useCallback(
@@ -250,6 +330,8 @@ export const useQuickOpen = () => {
     openBufferFiles,
     recentFilesInResults,
     otherFiles,
+    contentMatches,
+    openContentMatch,
     selectedIndex,
     handleItemSelect,
     handleItemHover,
