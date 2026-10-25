@@ -1,0 +1,21 @@
+{
+  "launchedAt": "2026-10-25T09:51:53.543Z",
+  "pid": 25820,
+  "versions": {
+    "node": "26.6.0",
+    "v8": "14.6.202.34-node.26"
+  },
+  "platform": "win32",
+  "arch": "x64",
+  "extensionId": "tencentcloud.codingcopilot",
+  "entries": [
+    {
+      "timestamp": "2026-10-25T09:51:54.552Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "Codebase endpoint is not configured",
+      "stack": "Error: Codebase endpoint is not configured\n    at CodebaseManagerImpl.buildConfiguration (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3072606)\n    at CodebaseManagerImpl.setConfiguration (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070370)\n    at SafeSubscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070236)\n    at SafeSubscriber.__tryOrUnsub (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1111413)\n    at SafeSubscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1110454)\n    at Subscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109404)\n    at Subscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at DistinctUntilChangedSubscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:2836983)\n    at DistinctUntilChangedSubscriber.Subscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at BehaviorSubject._subscribe (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:69:2540189)"
+    }
+  ],
+  "droppedCount": 0
+}

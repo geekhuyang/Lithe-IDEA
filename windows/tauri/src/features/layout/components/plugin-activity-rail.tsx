@@ -1,7 +1,10 @@
 import { useBufferStore } from "@/features/editor/stores/buffer.store";
 import { AgentTrigger } from "@/features/agent/components/agent-trigger";
 import { applyRightToolWindowIntent } from "@/features/layout/actions/right-tool-window-actions";
-import { useExtensionToolWindows } from "@/features/layout/services/extension-tool-window-registry";
+import {
+  extensionToolWindowViewIdFor,
+  useExtensionToolWindows,
+} from "@/features/layout/services/extension-tool-window-registry";
 import { toggleMavenPane } from "@/features/keymaps/commands/view-command-actions";
 import { MavenIcon } from "@/features/maven/components/maven-icon";
 import { useMavenStore } from "@/features/maven/stores/maven.store";
@@ -86,7 +89,11 @@ export function PluginActivityRail() {
         </Button>
       ) : null}
       {extensionToolWindows.map((toolWindow) => {
-        const isActive = isRightSidebarVisible && activeRightSidebarView === toolWindow.id;
+        // The right-sidebar state stores namespaced view ids
+        // (`extension:<extensionId>.<localId>`); matching on the bare
+        // contribution id would never highlight or open the pane.
+        const viewId = extensionToolWindowViewIdFor(toolWindow);
+        const isActive = isRightSidebarVisible && activeRightSidebarView === viewId;
         return (
           <Button
             key={toolWindow.id}
@@ -99,7 +106,7 @@ export function PluginActivityRail() {
             aria-label={toolWindow.title}
             aria-pressed={isActive}
             className={STRIPE_BUTTON_CLASS_NAME}
-            onClick={() => applyRightToolWindowIntent(toolWindow.id, "toggle")}
+            onClick={() => applyRightToolWindowIntent(viewId, "toggle")}
           >
             {toolWindow.icon ?? <PuzzlePieceIcon className="size-5" />}
           </Button>

@@ -290,8 +290,8 @@ jobs:
           node .agents/skills/write-stable-tests/scripts/run-bun-tests-with-timing.mjs --suite-timeout-ms 60000 --report .artifacts/test-stability/windows-notifications.json -- src/features/notifications
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           # Extension tool window and commit draft action registries back the
-          # CodeBuddy plugin; the plugin package covers its own prompt rules.
-          node .agents/skills/write-stable-tests/scripts/run-bun-tests-with-timing.mjs --suite-timeout-ms 60000 --report .artifacts/test-stability/windows-plugin-contributions.json -- src/features/layout/services/extension-tool-window-registry.test.ts src/features/git/services/commit-draft-action-registry.test.ts ../../Plugins/win/Official/CodeBuddy/services/codebuddy-prompt.test.ts
+          # CodeBuddy plugin; the plugin package covers its own bridge rules.
+          node .agents/skills/write-stable-tests/scripts/run-bun-tests-with-timing.mjs --suite-timeout-ms 60000 --report .artifacts/test-stability/windows-plugin-contributions.json -- src/features/layout/services/extension-tool-window-registry.test.ts src/features/git/services/commit-draft-action-registry.test.ts ../../Plugins/win/Official/CodeBuddy/components/codebuddy-webview-bridge.test.ts
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Test Agent panel and capability gate

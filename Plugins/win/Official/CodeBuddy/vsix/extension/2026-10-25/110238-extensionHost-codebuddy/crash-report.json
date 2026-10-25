@@ -1,0 +1,91 @@
+{
+  "launchedAt": "2026-10-25T03:02:38.190Z",
+  "pid": 8552,
+  "versions": {
+    "node": "22.22.2",
+    "v8": "12.4.254.21-node.39"
+  },
+  "platform": "win32",
+  "arch": "x64",
+  "extensionId": "tencentcloud.codingcopilot",
+  "entries": [
+    {
+      "timestamp": "2026-10-25T03:02:39.290Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "Codebase endpoint is not configured",
+      "stack": "Error: Codebase endpoint is not configured\n    at CodebaseManagerImpl.buildConfiguration (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3072606)\n    at CodebaseManagerImpl.setConfiguration (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070370)\n    at SafeSubscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070236)\n    at SafeSubscriber.__tryOrUnsub (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1111413)\n    at SafeSubscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1110454)\n    at Subscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109404)\n    at Subscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at DistinctUntilChangedSubscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:2836983)\n    at DistinctUntilChangedSubscriber.Subscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at BehaviorSubject._subscribe (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:69:2540189)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.239Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.243Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.245Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.248Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.249Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.254Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.255Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:39.258Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:45.466Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    },
+    {
+      "timestamp": "2026-10-25T03:04:45.469Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "CODEBUDDY_BRIDGE_TIMEOUT: commands.execute",
+      "stack": "Error: CODEBUDDY_BRIDGE_TIMEOUT: commands.execute\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:57:16)\n    at listOnTimeout (node:internal/timers:585:17)\n    at processTimers (node:internal/timers:521:7)"
+    }
+  ],
+  "droppedCount": 0
+}

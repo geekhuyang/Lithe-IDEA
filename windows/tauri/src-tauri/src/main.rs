@@ -4,6 +4,7 @@ mod agent;
 mod agent_clipboard;
 mod agent_provider_settings;
 mod ai_commit;
+mod codebuddy_host;
 mod core;
 mod date_time;
 mod debug;
@@ -21,7 +22,6 @@ mod maven;
 mod memory;
 mod owned_processes;
 mod platform;
-mod process_runner;
 mod profile_migration;
 mod project_window_registry;
 mod project_windows;
@@ -104,6 +104,7 @@ fn main() {
                 }
             }
             app.manage(Arc::new(diagnostics::DiagnosticBundleStore::default()));
+            app.manage(Arc::new(codebuddy_host::CodeBuddyHostState::default()));
             match logging::LogManager::initialize(app.handle()) {
                 Ok(log_manager) => {
                     app.manage(log_manager);
@@ -164,8 +165,12 @@ fn main() {
             }
         })
         .invoke_handler(tauri::generate_handler![
-            process_runner::resolve_executable,
-            process_runner::run_bounded_process,
+            codebuddy_host::codebuddy_host_start,
+            codebuddy_host::codebuddy_host_stop,
+            codebuddy_host::codebuddy_host_status,
+            codebuddy_host::codebuddy_host_call,
+            codebuddy_host::codebuddy_host_reply,
+            codebuddy_host::codebuddy_host_paths,
             date_time::format_system_date_time,
             agent::agent_open,
             agent::agent_send,

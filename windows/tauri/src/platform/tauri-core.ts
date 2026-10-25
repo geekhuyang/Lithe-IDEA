@@ -7,6 +7,7 @@ import {
   type InvokeArgs,
   type InvokeOptions,
 } from "@tauri-apps/api/core";
+import { listen, type UnlistenFn } from "@tauri-apps/api/event";
 import {
   BACKEND_UNAVAILABLE_TOOLTIP,
   isBackendCapabilityAvailable,
@@ -14,7 +15,11 @@ import {
 } from "@/config/backend-capabilities";
 import { adaptCoreResult } from "./core-result-adapter";
 
-export { Channel, convertFileSrc, isTauri };
+// Re-exported so code outside `src/` (bundled plugin packages) can reach the
+// Tauri event API through this facade instead of a bare specifier that only
+// resolves from `windows/tauri/node_modules`.
+export { Channel, convertFileSrc, isTauri, listen, type UnlistenFn };
+export { openUrl } from "@tauri-apps/plugin-opener";
 
 /**
  * Commands the shared `platform_invoke` dispatcher owns: Git compatibility

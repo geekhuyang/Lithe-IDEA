@@ -4,9 +4,9 @@
   "version": "0.3.0",
   "identifier": "app.lithe.windows",
   "build": {
-    "beforeDevCommand": "powershell -NoProfile -ExecutionPolicy Bypass -File ../../scripts/prepare-conpty.ps1 -BestEffort && node ../../scripts/build-windows-ide-mcp.mjs && bun run dev",
+    "beforeDevCommand": "powershell -NoProfile -ExecutionPolicy Bypass -File ../../scripts/prepare-conpty.ps1 -BestEffort && node ../../scripts/build-windows-ide-mcp.mjs && node ../../scripts/build-codebuddy-host.mjs && bun run dev",
     "devUrl": "http://127.0.0.1:1420",
-    "beforeBuildCommand": "node ../../scripts/build-windows-ide-mcp.mjs && bun run build",
+    "beforeBuildCommand": "node ../../scripts/build-windows-ide-mcp.mjs && node ../../scripts/build-codebuddy-host.mjs && bun run build",
     "frontendDist": "../dist"
   },
   "app": {
@@ -23,6 +23,8 @@
     "targets": ["nsis", "msi"],
     "resources": {
       "../src/extensions/bundled/**/*": "extensions/bundled/",
+      "../../../Plugins/win/Official/CodeBuddy/vsix/extension/**/*": "codebuddy/vsix/extension/",
+      "../../../Plugins/win/Official/CodeBuddy/host/main.js": "codebuddy/host/main.js",
       "helpers/": "helpers/"
     },
     "icon": ["icons/32x32.png", "icons/128x128.png", "icons/icon.ico"]

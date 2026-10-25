@@ -16,7 +16,8 @@ const bundledContributionModules = new Map<string, () => Promise<BundledContribu
   [V0_EXTENSION_ID, async () => (await import("@lithe/v0/v0-extension")).v0ExtensionModule],
   [
     CODEBUDDY_EXTENSION_ID,
-    async () => (await import("@lithe/codebuddy/codebuddy-extension")).codebuddyExtensionModule,
+    async () =>
+      (await import("@lithe/codebuddy/codebuddy-extension")).codebuddyExtensionModule,
   ],
 ]);
 const activeModules = new Map<string, BundledContributionModule>();

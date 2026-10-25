@@ -1,0 +1,4035 @@
+// https://github.com/jesseweed/seti-ui/blob/master/styles/_fonts/seti.less
+
+@font-face {
+  font-family: "seti";
+  src: url("../../../../src/browser/assets/styles/font/seti.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-base-pseudo {
+  font-family: "seti";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  line-height: 1;
+  font-size: 16px;
+  position: relative;
+  vertical-align: 0;
+}
+
+.icon(@filename) {
+  display: flex;
+  line-height: initial;
+  &:before {
+    &:extend(.icon-base-pseudo);
+    content: @filename;
+  }
+}
+
+.icon-default {
+  .icon("\E023");
+}
+.icon-bsl {
+  .icon("\E00A");
+}
+.icon-mdo {
+  .icon("\E062");
+}
+.icon-cls {
+  .icon("\E083");
+}
+.icon-apex {
+  .icon("\E083");
+}
+.icon-asm {
+  .icon("\E004");
+}
+.icon-s {
+  .icon("\E004");
+}
+.icon-bicep {
+  .icon("\E008");
+}
+.icon-bzl {
+  .icon("\E007");
+}
+.icon-bazel {
+  .icon("\E007");
+}
+.icon-build {
+  .icon("\E007");
+}
+.icon-workspace {
+  .icon("\E007");
+}
+.icon-bazelignore {
+  .icon("\E007");
+}
+.icon-bazelversion {
+  .icon("\E007");
+}
+.icon-h {
+  .icon("\E00C");
+}
+.icon-aspx {
+  .icon("\E048");
+}
+.icon-ascx {
+  .icon("\E048");
+}
+.icon-asax {
+  .icon("\E048");
+}
+.icon-master {
+  .icon("\E048");
+}
+.icon-hh {
+  .icon("\E01A");
+}
+.icon-hpp {
+  .icon("\E01A");
+}
+.icon-hxx {
+  .icon("\E01A");
+}
+.icon-h\+\+ {
+  .icon("\E01A");
+}
+.icon-edn {
+  .icon("\E013");
+}
+.icon-cfc {
+  .icon("\E018");
+}
+.icon-cfm {
+  .icon("\E018");
+}
+.icon-litcoffee {
+  .icon("\E016");
+}
+.icon-config {
+  .icon("\E019");
+}
+.icon-cr {
+  .icon("\E01B");
+}
+.icon-ecr {
+  .icon("\E01C");
+}
+.icon-slang {
+  .icon("\E01C");
+}
+.icon-cson {
+  .icon("\E055");
+}
+.icon-css.map {
+  .icon("\E01D");
+}
+.icon-sss {
+  .icon("\E01D");
+}
+.icon-csv {
+  .icon("\E01E");
+}
+.icon-xls {
+  .icon("\E0A4");
+}
+.icon-xlsx {
+  .icon("\E0A4");
+}
+.icon-cuh {
+  .icon("\E01F");
+}
+.icon-hu {
+  .icon("\E01F");
+}
+.icon-cake {
+  .icon("\E00D");
+}
+.icon-ctp {
+  .icon("\E00E");
+}
+.icon-d {
+  .icon("\E020");
+}
+.icon-doc {
+  .icon("\E0A3");
+}
+.icon-docx {
+  .icon("\E0A3");
+}
+.icon-ejs {
+  .icon("\E027");
+}
+.icon-ex {
+  .icon("\E028");
+}
+.icon-exs {
+  .icon("\E029");
+}
+.icon-elm {
+  .icon("\E02A");
+}
+.icon-ico {
+  .icon("\E02F");
+}
+.icon-gitconfig {
+  .icon("\E034");
+}
+.icon-gitkeep {
+  .icon("\E034");
+}
+.icon-gitattributes {
+  .icon("\E034");
+}
+.icon-gitmodules {
+  .icon("\E034");
+}
+.icon-slide {
+  .icon("\E039");
+}
+.icon-article {
+  .icon("\E039");
+}
+.icon-gd {
+  .icon("\E03B");
+}
+.icon-godot {
+  .icon("\E03B");
+}
+.icon-tres {
+  .icon("\E03B");
+}
+.icon-tscn {
+  .icon("\E03B");
+}
+.icon-gradle {
+  .icon("\E03C");
+}
+.icon-gsp {
+  .icon("\E03D");
+}
+.icon-gql {
+  .icon("\E03E");
+}
+.icon-graphql {
+  .icon("\E03E");
+}
+.icon-graphqls {
+  .icon("\E03E");
+}
+.icon-hack {
+  .icon("\E041");
+}
+.icon-haml {
+  .icon("\E042");
+}
+.icon-hs {
+  .icon("\E044");
+}
+.icon-lhs {
+  .icon("\E044");
+}
+.icon-hx {
+  .icon("\E045");
+}
+.icon-hxs {
+  .icon("\E045");
+}
+.icon-hxp {
+  .icon("\E045");
+}
+.icon-hxml {
+  .icon("\E045");
+}
+.icon-jade {
+  .icon("\E078");
+}
+.icon-class {
+  .icon("\E050");
+}
+.icon-classpath {
+  .icon("\E050");
+}
+.icon-js.map {
+  .icon("\E051");
+}
+.icon-cjs.map {
+  .icon("\E051");
+}
+.icon-mjs.map {
+  .icon("\E051");
+}
+.icon-spec.js {
+  .icon("\E051");
+}
+.icon-spec.cjs {
+  .icon("\E051");
+}
+.icon-spec.mjs {
+  .icon("\E051");
+}
+.icon-test.js {
+  .icon("\E051");
+}
+.icon-test.cjs {
+  .icon("\E051");
+}
+.icon-test.mjs {
+  .icon("\E051");
+}
+.icon-es {
+  .icon("\E051");
+}
+.icon-es5 {
+  .icon("\E051");
+}
+.icon-es7 {
+  .icon("\E051");
+}
+.icon-jinja {
+  .icon("\E053");
+}
+.icon-jinja2 {
+  .icon("\E053");
+}
+.icon-kt {
+  .icon("\E058");
+}
+.icon-kts {
+  .icon("\E058");
+}
+.icon-liquid {
+  .icon("\E05B");
+}
+.icon-ls {
+  .icon("\E05C");
+}
+.icon-argdown {
+  .icon("\E003");
+}
+.icon-ad {
+  .icon("\E003");
+}
+.icon-mustache {
+  .icon("\E063");
+}
+.icon-stache {
+  .icon("\E063");
+}
+.icon-nim {
+  .icon("\E065");
+}
+.icon-nims {
+  .icon("\E065");
+}
+.icon-github-issues {
+  .icon("\E037");
+}
+.icon-ipynb {
+  .icon("\E066");
+}
+.icon-njk {
+  .icon("\E069");
+}
+.icon-nunjucks {
+  .icon("\E069");
+}
+.icon-nunjs {
+  .icon("\E069");
+}
+.icon-nunj {
+  .icon("\E069");
+}
+.icon-njs {
+  .icon("\E069");
+}
+.icon-nj {
+  .icon("\E069");
+}
+.icon-npm-debug.log {
+  .icon("\E068");
+}
+.icon-npmignore {
+  .icon("\E067");
+}
+.icon-npmrc {
+  .icon("\E067");
+}
+.icon-ml {
+  .icon("\E06A");
+}
+.icon-mli {
+  .icon("\E06A");
+}
+.icon-cmx {
+  .icon("\E06A");
+}
+.icon-cmxa {
+  .icon("\E06A");
+}
+.icon-odata {
+  .icon("\E06B");
+}
+.icon-php.inc {
+  .icon("\E070");
+}
+.icon-pipeline {
+  .icon("\E071");
+}
+.icon-pddl {
+  .icon("\E06C");
+}
+.icon-plan {
+  .icon("\E072");
+}
+.icon-happenings {
+  .icon("\E043");
+}
+.icon-prisma {
+  .icon("\E075");
+}
+.icon-pp {
+  .icon("\E079");
+}
+.icon-epp {
+  .icon("\E079");
+}
+.icon-purs {
+  .icon("\E07A");
+}
+.icon-spec.jsx {
+  .icon("\E07D");
+}
+.icon-test.jsx {
+  .icon("\E07D");
+}
+.icon-cjsx {
+  .icon("\E07D");
+}
+.icon-spec.tsx {
+  .icon("\E07D");
+}
+.icon-test.tsx {
+  .icon("\E07D");
+}
+.icon-re {
+  .icon("\E07E");
+}
+.icon-res {
+  .icon("\E07F");
+}
+.icon-resi {
+  .icon("\E07F");
+}
+.icon-r {
+  .icon("\E001");
+}
+.icon-rmd {
+  .icon("\E001");
+}
+.icon-erb {
+  .icon("\E049");
+}
+.icon-erb.html {
+  .icon("\E049");
+}
+.icon-html.erb {
+  .icon("\E049");
+}
+.icon-sass {
+  .icon("\E084");
+}
+.icon-springbeans {
+  .icon("\E08C");
+}
+.icon-slim {
+  .icon("\E08A");
+}
+.icon-smarty.tpl {
+  .icon("\E08B");
+}
+.icon-tpl {
+  .icon("\E08B");
+}
+.icon-sbt {
+  .icon("\E085");
+}
+.icon-scala {
+  .icon("\E086");
+}
+.icon-sol {
+  .icon("\E02D");
+}
+.icon-styl {
+  .icon("\E08E");
+}
+.icon-svelte {
+  .icon("\E090");
+}
+.icon-soql {
+  .icon("\E022");
+}
+.icon-tf {
+  .icon("\E093");
+}
+.icon-tf.json {
+  .icon("\E093");
+}
+.icon-tfvars {
+  .icon("\E093");
+}
+.icon-tfvars.json {
+  .icon("\E093");
+}
+.icon-dtx {
+  .icon("\E094");
+}
+.icon-ins {
+  .icon("\E094");
+}
+.icon-toml {
+  .icon("\E019");
+}
+.icon-twig {
+  .icon("\E098");
+}
+.icon-spec.ts {
+  .icon("\E099");
+}
+.icon-test.ts {
+  .icon("\E099");
+}
+.icon-vala {
+  .icon("\E09A");
+}
+.icon-vapi {
+  .icon("\E09A");
+}
+.icon-component {
+  .icon("\E048");
+}
+.icon-vue {
+  .icon("\E09D");
+}
+.icon-wasm {
+  .icon("\E09E");
+}
+.icon-wat {
+  .icon("\E09F");
+}
+.icon-pro {
+  .icon("\E077");
+}
+.icon-zig {
+  .icon("\E0A8");
+}
+.icon-jar {
+  .icon("\E0A9");
+}
+.icon-zip {
+  .icon("\E0A9");
+}
+.icon-wgt {
+  .icon("\E0A1");
+}
+.icon-ai {
+  .icon("\E04B");
+}
+.icon-psd {
+  .icon("\E06F");
+}
+.icon-pdf {
+  .icon("\E06D");
+}
+.icon-eot {
+  .icon("\E033");
+}
+.icon-ttf {
+  .icon("\E033");
+}
+.icon-woff {
+  .icon("\E033");
+}
+.icon-woff2 {
+  .icon("\E033");
+}
+.icon-otf {
+  .icon("\E033");
+}
+.icon-avif {
+  .icon("\E04C");
+}
+.icon-gif {
+  .icon("\E04C");
+}
+.icon-jpg {
+  .icon("\E04C");
+}
+.icon-jpeg {
+  .icon("\E04C");
+}
+.icon-png {
+  .icon("\E04C");
+}
+.icon-pxm {
+  .icon("\E04C");
+}
+.icon-svg {
+  .icon("\E091");
+}
+.icon-svgx {
+  .icon("\E04C");
+}
+.icon-tiff {
+  .icon("\E04C");
+}
+.icon-webp {
+  .icon("\E04C");
+}
+.icon-sublime-project {
+  .icon("\E08F");
+}
+.icon-sublime-workspace {
+  .icon("\E08F");
+}
+.icon-mov {
+  .icon("\E09B");
+}
+.icon-ogv {
+  .icon("\E09B");
+}
+.icon-webm {
+  .icon("\E09B");
+}
+.icon-avi {
+  .icon("\E09B");
+}
+.icon-mpg {
+  .icon("\E09B");
+}
+.icon-mp4 {
+  .icon("\E09B");
+}
+.icon-mp3 {
+  .icon("\E005");
+}
+.icon-ogg {
+  .icon("\E005");
+}
+.icon-wav {
+  .icon("\E005");
+}
+.icon-flac {
+  .icon("\E005");
+}
+.icon-3ds {
+  .icon("\E091");
+}
+.icon-3dm {
+  .icon("\E091");
+}
+.icon-stl {
+  .icon("\E091");
+}
+.icon-obj {
+  .icon("\E091");
+}
+.icon-dae {
+  .icon("\E091");
+}
+.icon-babelrc {
+  .icon("\E006");
+}
+.icon-babelrc.js {
+  .icon("\E006");
+}
+.icon-babelrc.cjs {
+  .icon("\E006");
+}
+.icon-bazelrc {
+  .icon("\E007");
+}
+.icon-bowerrc {
+  .icon("\E009");
+}
+.icon-dockerignore {
+  .icon("\E025");
+}
+.icon-codeclimate.yml {
+  .icon("\E014");
+}
+.icon-eslintrc {
+  .icon("\E02C");
+}
+.icon-eslintrc.js {
+  .icon("\E02C");
+}
+.icon-eslintrc.cjs {
+  .icon("\E02C");
+}
+.icon-eslintrc.yaml {
+  .icon("\E02C");
+}
+.icon-eslintrc.yml {
+  .icon("\E02C");
+}
+.icon-eslintrc.json {
+  .icon("\E02C");
+}
+.icon-eslintignore {
+  .icon("\E02C");
+}
+.icon-firebaserc {
+  .icon("\E030");
+}
+.icon-gitlab-ci.yml {
+  .icon("\E038");
+}
+.icon-jshintrc {
+  .icon("\E051");
+}
+.icon-jscsrc {
+  .icon("\E051");
+}
+.icon-stylelintrc {
+  .icon("\E08D");
+}
+.icon-stylelintrc.json {
+  .icon("\E08D");
+}
+.icon-stylelintrc.yaml {
+  .icon("\E08D");
+}
+.icon-stylelintrc.yml {
+  .icon("\E08D");
+}
+.icon-stylelintrc.js {
+  .icon("\E08D");
+}
+.icon-stylelintignore {
+  .icon("\E08D");
+}
+.icon-direnv {
+  .icon("\E019");
+}
+.icon-env {
+  .icon("\E019");
+}
+.icon-static {
+  .icon("\E019");
+}
+.icon-slugignore {
+  .icon("\E019");
+}
+.icon-tmp {
+  .icon("\E012");
+}
+.icon-htaccess {
+  .icon("\E019");
+}
+.icon-key {
+  .icon("\E05D");
+}
+.icon-cert {
+  .icon("\E05D");
+}
+.icon-cer {
+  .icon("\E05D");
+}
+.icon-crt {
+  .icon("\E05D");
+}
+.icon-pem {
+  .icon("\E05D");
+}
+.icon-ds_store {
+  .icon("\E04A");
+}
+.icon-mix {
+  .icon("\E047");
+}
+.icon-karma.conf.js {
+  .icon("\E057");
+}
+.icon-karma.conf.cjs {
+  .icon("\E057");
+}
+.icon-karma.conf.mjs {
+  .icon("\E057");
+}
+.icon-karma.conf.coffee {
+  .icon("\E057");
+}
+.icon-readme.md {
+  .icon("\E04D");
+}
+.icon-readme.txt {
+  .icon("\E04D");
+}
+.icon-readme {
+  .icon("\E04D");
+}
+.icon-changelog.md {
+  .icon("\E012");
+}
+.icon-changelog.txt {
+  .icon("\E012");
+}
+.icon-changelog {
+  .icon("\E012");
+}
+.icon-changes.md {
+  .icon("\E012");
+}
+.icon-changes.txt {
+  .icon("\E012");
+}
+.icon-changes {
+  .icon("\E012");
+}
+.icon-version.md {
+  .icon("\E012");
+}
+.icon-version.txt {
+  .icon("\E012");
+}
+.icon-version {
+  .icon("\E012");
+}
+.icon-mvnw {
+  .icon("\E061");
+}
+.icon-pom.xml {
+  .icon("\E061");
+}
+.icon-tsconfig.json {
+  .icon("\E097");
+}
+.icon-vite.config.js {
+  .icon("\E09C");
+}
+.icon-vite.config.ts {
+  .icon("\E09C");
+}
+.icon-vite.config.mjs {
+  .icon("\E09C");
+}
+.icon-vite.config.mts {
+  .icon("\E09C");
+}
+.icon-vite.config.cjs {
+  .icon("\E09C");
+}
+.icon-vite.config.cts {
+  .icon("\E09C");
+}
+.icon-swagger.json {
+  .icon("\E055");
+}
+.icon-swagger.yml {
+  .icon("\E055");
+}
+.icon-swagger.yaml {
+  .icon("\E055");
+}
+.icon-mime.types {
+  .icon("\E019");
+}
+.icon-jenkinsfile {
+  .icon("\E052");
+}
+.icon-babel.config.js {
+  .icon("\E006");
+}
+.icon-babel.config.json {
+  .icon("\E006");
+}
+.icon-babel.config.cjs {
+  .icon("\E006");
+}
+.icon-build.bazel {
+  .icon("\E007");
+}
+.icon-workspace.bazel {
+  .icon("\E007");
+}
+.icon-bower.json {
+  .icon("\E009");
+}
+.icon-docker-healthcheck {
+  .icon("\E025");
+}
+.icon-eslint.config.js {
+  .icon("\E02C");
+}
+.icon-firebase.json {
+  .icon("\E030");
+}
+.icon-geckodriver {
+  .icon("\E031");
+}
+.icon-gruntfile.js {
+  .icon("\E03F");
+}
+.icon-gruntfile.babel.js {
+  .icon("\E03F");
+}
+.icon-gruntfile.coffee {
+  .icon("\E03F");
+}
+.icon-gulpfile {
+  .icon("\E040");
+}
+.icon-gulpfile.js {
+  .icon("\E040");
+}
+.icon-ionic.config.json {
+  .icon("\E04E");
+}
+.icon-ionic.project {
+  .icon("\E04E");
+}
+.icon-platformio.ini {
+  .icon("\E073");
+}
+.icon-rollup.config.js {
+  .icon("\E080");
+}
+.icon-sass-lint.yml {
+  .icon("\E084");
+}
+.icon-stylelint.config.js {
+  .icon("\E08D");
+}
+.icon-stylelint.config.cjs {
+  .icon("\E08D");
+}
+.icon-stylelint.config.mjs {
+  .icon("\E08D");
+}
+.icon-yarn.clean {
+  .icon("\E0A6");
+}
+.icon-yarn.lock {
+  .icon("\E0A6");
+}
+.icon-webpack.config.js {
+  .icon("\E0A0");
+}
+.icon-webpack.config.cjs {
+  .icon("\E0A0");
+}
+.icon-webpack.config.mjs {
+  .icon("\E0A0");
+}
+.icon-webpack.config.ts {
+  .icon("\E0A0");
+}
+.icon-webpack.config.build.js {
+  .icon("\E0A0");
+}
+.icon-webpack.config.build.cjs {
+  .icon("\E0A0");
+}
+.icon-webpack.config.build.mjs {
+  .icon("\E0A0");
+}
+.icon-webpack.config.build.ts {
+  .icon("\E0A0");
+}
+.icon-webpack.common.js {
+  .icon("\E0A0");
+}
+.icon-webpack.common.cjs {
+  .icon("\E0A0");
+}
+.icon-webpack.common.mjs {
+  .icon("\E0A0");
+}
+.icon-webpack.common.ts {
+  .icon("\E0A0");
+}
+.icon-webpack.dev.js {
+  .icon("\E0A0");
+}
+.icon-webpack.dev.cjs {
+  .icon("\E0A0");
+}
+.icon-webpack.dev.mjs {
+  .icon("\E0A0");
+}
+.icon-webpack.dev.ts {
+  .icon("\E0A0");
+}
+.icon-webpack.prod.js {
+  .icon("\E0A0");
+}
+.icon-webpack.prod.cjs {
+  .icon("\E0A0");
+}
+.icon-webpack.prod.mjs {
+  .icon("\E0A0");
+}
+.icon-webpack.prod.ts {
+  .icon("\E0A0");
+}
+.icon-license {
+  .icon("\E05A");
+}
+.icon-licence {
+  .icon("\E05A");
+}
+.icon-license.txt {
+  .icon("\E05A");
+}
+.icon-licence.txt {
+  .icon("\E05A");
+}
+.icon-license.md {
+  .icon("\E05A");
+}
+.icon-licence.md {
+  .icon("\E05A");
+}
+.icon-copying {
+  .icon("\E05A");
+}
+.icon-copying.txt {
+  .icon("\E05A");
+}
+.icon-copying.md {
+  .icon("\E05A");
+}
+.icon-compiling {
+  .icon("\E05A");
+}
+.icon-compiling.txt {
+  .icon("\E05A");
+}
+.icon-compiling.md {
+  .icon("\E05A");
+}
+.icon-contributing {
+  .icon("\E05A");
+}
+.icon-contributing.txt {
+  .icon("\E05A");
+}
+.icon-contributing.md {
+  .icon("\E05A");
+}
+.icon-qmakefile {
+  .icon("\E05F");
+}
+.icon-omakefile {
+  .icon("\E05F");
+}
+.icon-cmakelists.txt {
+  .icon("\E05F");
+}
+.icon-procfile {
+  .icon("\E046");
+}
+.icon-todo {
+  .icon("\E096");
+}
+.icon-todo.txt {
+  .icon("\E096");
+}
+.icon-todo.md {
+  .icon("\E096");
+}
+.icon-bat {
+  .icon("\E0A2");
+}
+.icon-clojure {
+  .icon("\E013");
+}
+.icon-coffeescript {
+  .icon("\E016");
+}
+.icon-jsonc {
+  .icon("\E055");
+}
+.icon-json {
+  .icon("\E055");
+}
+.icon-c {
+  .icon("\E00C");
+}
+.icon-cpp {
+  .icon("\E01A");
+}
+.icon-cuda-cpp {
+  .icon("\E01F");
+}
+.icon-csharp {
+  .icon("\E00B");
+}
+.icon-css {
+  .icon("\E01D");
+}
+.icon-dart {
+  .icon("\E021");
+}
+.icon-dockerfile {
+  .icon("\E025");
+}
+.icon-ignore,
+.icon-gitignore {
+  .icon("\E034");
+}
+.icon-fsharp {
+  .icon("\E02E");
+}
+.icon-git-commit {
+  .icon("\E034");
+}
+.icon-go {
+  .icon("\E03A");
+}
+.icon-groovy {
+  .icon("\E03D");
+}
+.icon-handlebars {
+  .icon("\E063");
+}
+.icon-html {
+  .icon("\E048");
+}
+.icon-properties {
+  .icon("\E019");
+}
+.icon-java {
+  .icon("\E050");
+}
+.icon-javascriptreact {
+  .icon("\E07D");
+}
+.icon-javascript {
+  .icon("\E051");
+}
+.icon-julia {
+  .icon("\E056");
+}
+.icon-tex {
+  .icon("\E094");
+}
+.icon-latex {
+  .icon("\E094");
+}
+.icon-less {
+  .icon("\E059");
+}
+.icon-lua {
+  .icon("\E05E");
+}
+.icon-makefile {
+  .icon("\E05F");
+}
+.icon-markdown {
+  .icon("\E060");
+}
+.icon-objective-c {
+  .icon("\E00C");
+}
+.icon-objective-cpp {
+  .icon("\E01A");
+}
+.icon-perl {
+  .icon("\E06E");
+}
+.icon-php {
+  .icon("\E070");
+}
+.icon-powershell {
+  .icon("\E074");
+}
+.icon-python {
+  .icon("\E07B");
+}
+.icon-razor {
+  .icon("\E048");
+}
+.icon-ruby {
+  .icon("\E081");
+}
+.icon-rust {
+  .icon("\E082");
+}
+.icon-scss {
+  .icon("\E084");
+}
+.icon-search-result {
+  .icon("\E015");
+}
+.icon-shellscript {
+  .icon("\E089");
+}
+.icon-sql {
+  .icon("\E022");
+}
+.icon-swift {
+  .icon("\E092");
+}
+.icon-typescript {
+  .icon("\E099");
+}
+.icon-typescriptreact {
+  .icon("\E07D");
+}
+.icon-xml {
+  .icon("\E0A5");
+}
+.icon-yaml {
+  .icon("\E0A7");
+}
+.icon-dockercompose,
+.icon-docker-compose {
+  .icon("\E025");
+}
+.icon-elixir {
+  .icon("\E028");
+}
+.icon-haskell {
+  .icon("\E044");
+}
+.icon-haxe {
+  .icon("\E045");
+}
+.icon-kotlin {
+  .icon("\E058");
+}
+.icon-ocaml {
+  .icon("\E06A");
+}
+.icon-rescript {
+  .icon("\E07F");
+}
+.icon-stylus {
+  .icon("\E08E");
+}
+.icon-terraform {
+  .icon("\E093");
+}
+.icon-jsonl {
+  .icon("\E055");
+}
+.icon-postcss {
+  .icon("\E01D");
+}
+.icon-django-html {
+  .icon("\E048");
+}
+.icon-blade {
+  .icon("\E070");
+}
+
+body.vscode-high-contrast:not(.vscode-high-contrast-light),
+body.vscode-dark {
+  .icon-default {
+    color: #d4d7d6;
+  }
+  .icon-bsl {
+    color: #cc3e44;
+  }
+  .icon-mdo {
+    color: #cc3e44;
+  }
+  .icon-cls {
+    color: #519aba;
+  }
+  .icon-apex {
+    color: #519aba;
+  }
+  .icon-asm {
+    color: #cc3e44;
+  }
+  .icon-s {
+    color: #cc3e44;
+  }
+  .icon-bicep {
+    color: #519aba;
+  }
+  .icon-bzl {
+    color: #8dc149;
+  }
+  .icon-bazel {
+    color: #8dc149;
+  }
+  .icon-build {
+    color: #8dc149;
+  }
+  .icon-workspace {
+    color: #8dc149;
+  }
+  .icon-bazelignore {
+    color: #8dc149;
+  }
+  .icon-bazelversion {
+    color: #8dc149;
+  }
+  .icon-h {
+    color: #a074c4;
+  }
+  .icon-aspx {
+    color: #519aba;
+  }
+  .icon-ascx {
+    color: #8dc149;
+  }
+  .icon-asax {
+    color: #cbcb41;
+  }
+  .icon-master {
+    color: #cbcb41;
+  }
+  .icon-hh {
+    color: #a074c4;
+  }
+  .icon-hpp {
+    color: #a074c4;
+  }
+  .icon-hxx {
+    color: #a074c4;
+  }
+  .icon-h\+\+ {
+    color: #a074c4;
+  }
+  .icon-edn {
+    color: #519aba;
+  }
+  .icon-cfc {
+    color: #519aba;
+  }
+  .icon-cfm {
+    color: #519aba;
+  }
+  .icon-litcoffee {
+    color: #cbcb41;
+  }
+  .icon-config {
+    color: #6d8086;
+  }
+  .icon-cr {
+    color: #d4d7d6;
+  }
+  .icon-ecr {
+    color: #d4d7d6;
+  }
+  .icon-slang {
+    color: #d4d7d6;
+  }
+  .icon-cson {
+    color: #cbcb41;
+  }
+  .icon-css.map {
+    color: #519aba;
+  }
+  .icon-sss {
+    color: #519aba;
+  }
+  .icon-csv {
+    color: #8dc149;
+  }
+  .icon-xls {
+    color: #8dc149;
+  }
+  .icon-xlsx {
+    color: #8dc149;
+  }
+  .icon-cuh {
+    color: #a074c4;
+  }
+  .icon-hu {
+    color: #a074c4;
+  }
+  .icon-cake {
+    color: #cc3e44;
+  }
+  .icon-ctp {
+    color: #cc3e44;
+  }
+  .icon-d {
+    color: #cc3e44;
+  }
+  .icon-doc {
+    color: #519aba;
+  }
+  .icon-docx {
+    color: #519aba;
+  }
+  .icon-ejs {
+    color: #cbcb41;
+  }
+  .icon-ex {
+    color: #a074c4;
+  }
+  .icon-exs {
+    color: #a074c4;
+  }
+  .icon-elm {
+    color: #519aba;
+  }
+  .icon-ico {
+    color: #cbcb41;
+  }
+  .icon-gitconfig {
+    color: #41535b;
+  }
+  .icon-gitkeep {
+    color: #41535b;
+  }
+  .icon-gitattributes {
+    color: #41535b;
+  }
+  .icon-gitmodules {
+    color: #41535b;
+  }
+  .icon-slide {
+    color: #519aba;
+  }
+  .icon-article {
+    color: #519aba;
+  }
+  .icon-gd {
+    color: #519aba;
+  }
+  .icon-godot {
+    color: #519aba;
+  }
+  .icon-tres {
+    color: #cbcb41;
+  }
+  .icon-tscn {
+    color: #a074c4;
+  }
+  .icon-gradle {
+    color: #519aba;
+  }
+  .icon-gsp {
+    color: #8dc149;
+  }
+  .icon-gql {
+    color: #f55385;
+  }
+  .icon-graphql {
+    color: #f55385;
+  }
+  .icon-graphqls {
+    color: #f55385;
+  }
+  .icon-hack {
+    color: #e37933;
+  }
+  .icon-haml {
+    color: #cc3e44;
+  }
+  .icon-hs {
+    color: #a074c4;
+  }
+  .icon-lhs {
+    color: #a074c4;
+  }
+  .icon-hx {
+    color: #e37933;
+  }
+  .icon-hxs {
+    color: #cbcb41;
+  }
+  .icon-hxp {
+    color: #519aba;
+  }
+  .icon-hxml {
+    color: #a074c4;
+  }
+  .icon-jade {
+    color: #cc3e44;
+  }
+  .icon-class {
+    color: #519aba;
+  }
+  .icon-classpath {
+    color: #cc3e44;
+  }
+  .icon-js.map {
+    color: #cbcb41;
+  }
+  .icon-cjs.map {
+    color: #cbcb41;
+  }
+  .icon-mjs.map {
+    color: #cbcb41;
+  }
+  .icon-spec.js {
+    color: #e37933;
+  }
+  .icon-spec.cjs {
+    color: #e37933;
+  }
+  .icon-spec.mjs {
+    color: #e37933;
+  }
+  .icon-test.js {
+    color: #e37933;
+  }
+  .icon-test.cjs {
+    color: #e37933;
+  }
+  .icon-test.mjs {
+    color: #e37933;
+  }
+  .icon-es {
+    color: #cbcb41;
+  }
+  .icon-es5 {
+    color: #cbcb41;
+  }
+  .icon-es7 {
+    color: #cbcb41;
+  }
+  .icon-jinja {
+    color: #cc3e44;
+  }
+  .icon-jinja2 {
+    color: #cc3e44;
+  }
+  .icon-kt {
+    color: #e37933;
+  }
+  .icon-kts {
+    color: #e37933;
+  }
+  .icon-liquid {
+    color: #8dc149;
+  }
+  .icon-ls {
+    color: #519aba;
+  }
+  .icon-argdown {
+    color: #519aba;
+  }
+  .icon-ad {
+    color: #519aba;
+  }
+  .icon-mustache {
+    color: #e37933;
+  }
+  .icon-stache {
+    color: #e37933;
+  }
+  .icon-nim {
+    color: #cbcb41;
+  }
+  .icon-nims {
+    color: #cbcb41;
+  }
+  .icon-github-issues {
+    color: #d4d7d6;
+  }
+  .icon-ipynb {
+    color: #519aba;
+  }
+  .icon-njk {
+    color: #8dc149;
+  }
+  .icon-nunjucks {
+    color: #8dc149;
+  }
+  .icon-nunjs {
+    color: #8dc149;
+  }
+  .icon-nunj {
+    color: #8dc149;
+  }
+  .icon-njs {
+    color: #8dc149;
+  }
+  .icon-nj {
+    color: #8dc149;
+  }
+  .icon-npm-debug.log {
+    color: #41535b;
+  }
+  .icon-npmignore {
+    color: #cc3e44;
+  }
+  .icon-npmrc {
+    color: #cc3e44;
+  }
+  .icon-ml {
+    color: #e37933;
+  }
+  .icon-mli {
+    color: #e37933;
+  }
+  .icon-cmx {
+    color: #e37933;
+  }
+  .icon-cmxa {
+    color: #e37933;
+  }
+  .icon-odata {
+    color: #e37933;
+  }
+  .icon-php.inc {
+    color: #a074c4;
+  }
+  .icon-pipeline {
+    color: #e37933;
+  }
+  .icon-pddl {
+    color: #a074c4;
+  }
+  .icon-plan {
+    color: #8dc149;
+  }
+  .icon-happenings {
+    color: #519aba;
+  }
+  .icon-prisma {
+    color: #519aba;
+  }
+  .icon-pp {
+    color: #cbcb41;
+  }
+  .icon-epp {
+    color: #cbcb41;
+  }
+  .icon-purs {
+    color: #d4d7d6;
+  }
+  .icon-spec.jsx {
+    color: #e37933;
+  }
+  .icon-test.jsx {
+    color: #e37933;
+  }
+  .icon-cjsx {
+    color: #519aba;
+  }
+  .icon-spec.tsx {
+    color: #e37933;
+  }
+  .icon-test.tsx {
+    color: #e37933;
+  }
+  .icon-re {
+    color: #cc3e44;
+  }
+  .icon-res {
+    color: #cc3e44;
+  }
+  .icon-resi {
+    color: #f55385;
+  }
+  .icon-r {
+    color: #519aba;
+  }
+  .icon-rmd {
+    color: #519aba;
+  }
+  .icon-erb {
+    color: #cc3e44;
+  }
+  .icon-erb.html {
+    color: #cc3e44;
+  }
+  .icon-html.erb {
+    color: #cc3e44;
+  }
+  .icon-sass {
+    color: #f55385;
+  }
+  .icon-springbeans {
+    color: #8dc149;
+  }
+  .icon-slim {
+    color: #e37933;
+  }
+  .icon-smarty.tpl {
+    color: #cbcb41;
+  }
+  .icon-tpl {
+    color: #cbcb41;
+  }
+  .icon-sbt {
+    color: #519aba;
+  }
+  .icon-scala {
+    color: #cc3e44;
+  }
+  .icon-sol {
+    color: #519aba;
+  }
+  .icon-styl {
+    color: #8dc149;
+  }
+  .icon-svelte {
+    color: #cc3e44;
+  }
+  .icon-soql {
+    color: #519aba;
+  }
+  .icon-tf {
+    color: #a074c4;
+  }
+  .icon-tf.json {
+    color: #a074c4;
+  }
+  .icon-tfvars {
+    color: #a074c4;
+  }
+  .icon-tfvars.json {
+    color: #a074c4;
+  }
+  .icon-dtx {
+    color: #e37933;
+  }
+  .icon-ins {
+    color: #d4d7d6;
+  }
+  .icon-toml {
+    color: #6d8086;
+  }
+  .icon-twig {
+    color: #8dc149;
+  }
+  .icon-spec.ts {
+    color: #e37933;
+  }
+  .icon-test.ts {
+    color: #e37933;
+  }
+  .icon-vala {
+    color: #6d8086;
+  }
+  .icon-vapi {
+    color: #6d8086;
+  }
+  .icon-component {
+    color: #e37933;
+  }
+  .icon-vue {
+    color: #8dc149;
+  }
+  .icon-wasm {
+    color: #a074c4;
+  }
+  .icon-wat {
+    color: #a074c4;
+  }
+  .icon-pro {
+    color: #e37933;
+  }
+  .icon-zig {
+    color: #e37933;
+  }
+  .icon-jar {
+    color: #cc3e44;
+  }
+  .icon-zip {
+    color: #cc3e44;
+  }
+  .icon-wgt {
+    color: #519aba;
+  }
+  .icon-ai {
+    color: #cbcb41;
+  }
+  .icon-psd {
+    color: #519aba;
+  }
+  .icon-pdf {
+    color: #cc3e44;
+  }
+  .icon-eot {
+    color: #cc3e44;
+  }
+  .icon-ttf {
+    color: #cc3e44;
+  }
+  .icon-woff {
+    color: #cc3e44;
+  }
+  .icon-woff2 {
+    color: #cc3e44;
+  }
+  .icon-otf {
+    color: #cc3e44;
+  }
+  .icon-avif {
+    color: #a074c4;
+  }
+  .icon-gif {
+    color: #a074c4;
+  }
+  .icon-jpg {
+    color: #a074c4;
+  }
+  .icon-jpeg {
+    color: #a074c4;
+  }
+  .icon-png {
+    color: #a074c4;
+  }
+  .icon-pxm {
+    color: #a074c4;
+  }
+  .icon-svg {
+    color: #a074c4;
+  }
+  .icon-svgx {
+    color: #a074c4;
+  }
+  .icon-tiff {
+    color: #a074c4;
+  }
+  .icon-webp {
+    color: #a074c4;
+  }
+  .icon-sublime-project {
+    color: #e37933;
+  }
+  .icon-sublime-workspace {
+    color: #e37933;
+  }
+  .icon-mov {
+    color: #f55385;
+  }
+  .icon-ogv {
+    color: #f55385;
+  }
+  .icon-webm {
+    color: #f55385;
+  }
+  .icon-avi {
+    color: #f55385;
+  }
+  .icon-mpg {
+    color: #f55385;
+  }
+  .icon-mp4 {
+    color: #f55385;
+  }
+  .icon-mp3 {
+    color: #a074c4;
+  }
+  .icon-ogg {
+    color: #a074c4;
+  }
+  .icon-wav {
+    color: #a074c4;
+  }
+  .icon-flac {
+    color: #a074c4;
+  }
+  .icon-3ds {
+    color: #519aba;
+  }
+  .icon-3dm {
+    color: #519aba;
+  }
+  .icon-stl {
+    color: #519aba;
+  }
+  .icon-obj {
+    color: #519aba;
+  }
+  .icon-dae {
+    color: #519aba;
+  }
+  .icon-babelrc {
+    color: #cbcb41;
+  }
+  .icon-babelrc.js {
+    color: #cbcb41;
+  }
+  .icon-babelrc.cjs {
+    color: #cbcb41;
+  }
+  .icon-bazelrc {
+    color: #4d5a5e;
+  }
+  .icon-bowerrc {
+    color: #e37933;
+  }
+  .icon-dockerignore {
+    color: #4d5a5e;
+  }
+  .icon-codeclimate.yml {
+    color: #8dc149;
+  }
+  .icon-eslintrc {
+    color: #a074c4;
+  }
+  .icon-eslintrc.js {
+    color: #a074c4;
+  }
+  .icon-eslintrc.cjs {
+    color: #a074c4;
+  }
+  .icon-eslintrc.yaml {
+    color: #a074c4;
+  }
+  .icon-eslintrc.yml {
+    color: #a074c4;
+  }
+  .icon-eslintrc.json {
+    color: #a074c4;
+  }
+  .icon-eslintignore {
+    color: #4d5a5e;
+  }
+  .icon-firebaserc {
+    color: #e37933;
+  }
+  .icon-gitlab-ci.yml {
+    color: #e37933;
+  }
+  .icon-jshintrc {
+    color: #519aba;
+  }
+  .icon-jscsrc {
+    color: #519aba;
+  }
+  .icon-stylelintrc {
+    color: #d4d7d6;
+  }
+  .icon-stylelintrc.json {
+    color: #d4d7d6;
+  }
+  .icon-stylelintrc.yaml {
+    color: #d4d7d6;
+  }
+  .icon-stylelintrc.yml {
+    color: #d4d7d6;
+  }
+  .icon-stylelintrc.js {
+    color: #d4d7d6;
+  }
+  .icon-stylelintignore {
+    color: #4d5a5e;
+  }
+  .icon-direnv {
+    color: #6d8086;
+  }
+  .icon-env {
+    color: #6d8086;
+  }
+  .icon-static {
+    color: #6d8086;
+  }
+  .icon-slugignore {
+    color: #6d8086;
+  }
+  .icon-tmp {
+    color: #6d8086;
+  }
+  .icon-htaccess {
+    color: #6d8086;
+  }
+  .icon-key {
+    color: #8dc149;
+  }
+  .icon-cert {
+    color: #8dc149;
+  }
+  .icon-cer {
+    color: #8dc149;
+  }
+  .icon-crt {
+    color: #8dc149;
+  }
+  .icon-pem {
+    color: #8dc149;
+  }
+  .icon-ds_store {
+    color: #41535b;
+  }
+  .icon-mix {
+    color: #cc3e44;
+  }
+  .icon-karma.conf.js {
+    color: #8dc149;
+  }
+  .icon-karma.conf.cjs {
+    color: #8dc149;
+  }
+  .icon-karma.conf.mjs {
+    color: #8dc149;
+  }
+  .icon-karma.conf.coffee {
+    color: #8dc149;
+  }
+  .icon-readme.md {
+    color: #519aba;
+  }
+  .icon-readme.txt {
+    color: #519aba;
+  }
+  .icon-readme {
+    color: #519aba;
+  }
+  .icon-changelog.md {
+    color: #519aba;
+  }
+  .icon-changelog.txt {
+    color: #519aba;
+  }
+  .icon-changelog {
+    color: #519aba;
+  }
+  .icon-changes.md {
+    color: #519aba;
+  }
+  .icon-changes.txt {
+    color: #519aba;
+  }
+  .icon-changes {
+    color: #519aba;
+  }
+  .icon-version.md {
+    color: #519aba;
+  }
+  .icon-version.txt {
+    color: #519aba;
+  }
+  .icon-version {
+    color: #519aba;
+  }
+  .icon-mvnw {
+    color: #cc3e44;
+  }
+  .icon-pom.xml {
+    color: #cc3e44;
+  }
+  .icon-tsconfig.json {
+    color: #519aba;
+  }
+  .icon-vite.config.js {
+    color: #cbcb41;
+  }
+  .icon-vite.config.ts {
+    color: #cbcb41;
+  }
+  .icon-vite.config.mjs {
+    color: #cbcb41;
+  }
+  .icon-vite.config.mts {
+    color: #cbcb41;
+  }
+  .icon-vite.config.cjs {
+    color: #cbcb41;
+  }
+  .icon-vite.config.cts {
+    color: #cbcb41;
+  }
+  .icon-swagger.json {
+    color: #8dc149;
+  }
+  .icon-swagger.yml {
+    color: #8dc149;
+  }
+  .icon-swagger.yaml {
+    color: #8dc149;
+  }
+  .icon-mime.types {
+    color: #6d8086;
+  }
+  .icon-jenkinsfile {
+    color: #cc3e44;
+  }
+  .icon-babel.config.js {
+    color: #cbcb41;
+  }
+  .icon-babel.config.json {
+    color: #cbcb41;
+  }
+  .icon-babel.config.cjs {
+    color: #cbcb41;
+  }
+  .icon-build.bazel {
+    color: #8dc149;
+  }
+  .icon-workspace.bazel {
+    color: #8dc149;
+  }
+  .icon-bower.json {
+    color: #e37933;
+  }
+  .icon-docker-healthcheck {
+    color: #8dc149;
+  }
+  .icon-eslint.config.js {
+    color: #a074c4;
+  }
+  .icon-firebase.json {
+    color: #e37933;
+  }
+  .icon-geckodriver {
+    color: #e37933;
+  }
+  .icon-gruntfile.js {
+    color: #e37933;
+  }
+  .icon-gruntfile.babel.js {
+    color: #e37933;
+  }
+  .icon-gruntfile.coffee {
+    color: #e37933;
+  }
+  .icon-gulpfile {
+    color: #cc3e44;
+  }
+  .icon-gulpfile.js {
+    color: #cc3e44;
+  }
+  .icon-ionic.config.json {
+    color: #519aba;
+  }
+  .icon-ionic.project {
+    color: #519aba;
+  }
+  .icon-platformio.ini {
+    color: #e37933;
+  }
+  .icon-rollup.config.js {
+    color: #cc3e44;
+  }
+  .icon-sass-lint.yml {
+    color: #f55385;
+  }
+  .icon-stylelint.config.js {
+    color: #d4d7d6;
+  }
+  .icon-stylelint.config.cjs {
+    color: #d4d7d6;
+  }
+  .icon-stylelint.config.mjs {
+    color: #d4d7d6;
+  }
+  .icon-yarn.clean {
+    color: #519aba;
+  }
+  .icon-yarn.lock {
+    color: #519aba;
+  }
+  .icon-webpack.config.js {
+    color: #519aba;
+  }
+  .icon-webpack.config.cjs {
+    color: #519aba;
+  }
+  .icon-webpack.config.mjs {
+    color: #519aba;
+  }
+  .icon-webpack.config.ts {
+    color: #519aba;
+  }
+  .icon-webpack.config.build.js {
+    color: #519aba;
+  }
+  .icon-webpack.config.build.cjs {
+    color: #519aba;
+  }
+  .icon-webpack.config.build.mjs {
+    color: #519aba;
+  }
+  .icon-webpack.config.build.ts {
+    color: #519aba;
+  }
+  .icon-webpack.common.js {
+    color: #519aba;
+  }
+  .icon-webpack.common.cjs {
+    color: #519aba;
+  }
+  .icon-webpack.common.mjs {
+    color: #519aba;
+  }
+  .icon-webpack.common.ts {
+    color: #519aba;
+  }
+  .icon-webpack.dev.js {
+    color: #519aba;
+  }
+  .icon-webpack.dev.cjs {
+    color: #519aba;
+  }
+  .icon-webpack.dev.mjs {
+    color: #519aba;
+  }
+  .icon-webpack.dev.ts {
+    color: #519aba;
+  }
+  .icon-webpack.prod.js {
+    color: #519aba;
+  }
+  .icon-webpack.prod.cjs {
+    color: #519aba;
+  }
+  .icon-webpack.prod.mjs {
+    color: #519aba;
+  }
+  .icon-webpack.prod.ts {
+    color: #519aba;
+  }
+  .icon-license {
+    color: #cbcb41;
+  }
+  .icon-licence {
+    color: #cbcb41;
+  }
+  .icon-license.txt {
+    color: #cbcb41;
+  }
+  .icon-licence.txt {
+    color: #cbcb41;
+  }
+  .icon-license.md {
+    color: #cbcb41;
+  }
+  .icon-licence.md {
+    color: #cbcb41;
+  }
+  .icon-copying {
+    color: #cbcb41;
+  }
+  .icon-copying.txt {
+    color: #cbcb41;
+  }
+  .icon-copying.md {
+    color: #cbcb41;
+  }
+  .icon-compiling {
+    color: #e37933;
+  }
+  .icon-compiling.txt {
+    color: #e37933;
+  }
+  .icon-compiling.md {
+    color: #e37933;
+  }
+  .icon-contributing {
+    color: #cc3e44;
+  }
+  .icon-contributing.txt {
+    color: #cc3e44;
+  }
+  .icon-contributing.md {
+    color: #cc3e44;
+  }
+  .icon-qmakefile {
+    color: #a074c4;
+  }
+  .icon-omakefile {
+    color: #6d8086;
+  }
+  .icon-cmakelists.txt {
+    color: #519aba;
+  }
+  .icon-procfile {
+    color: #a074c4;
+  }
+  .icon-todo {
+    color: inherit;
+  }
+  .icon-todo.txt {
+    color: inherit;
+  }
+  .icon-todo.md {
+    color: inherit;
+  }
+  .icon-bat {
+    color: #519aba;
+  }
+  .icon-clojure {
+    color: #8dc149;
+  }
+  .icon-coffeescript {
+    color: #cbcb41;
+  }
+  .icon-jsonc {
+    color: #cbcb41;
+  }
+  .icon-json {
+    color: #cbcb41;
+  }
+  .icon-c {
+    color: #519aba;
+  }
+  .icon-cpp {
+    color: #519aba;
+  }
+  .icon-cuda-cpp {
+    color: #8dc149;
+  }
+  .icon-csharp {
+    color: #519aba;
+  }
+  .icon-css {
+    color: #519aba;
+  }
+  .icon-dart {
+    color: #519aba;
+  }
+  .icon-dockerfile {
+    color: #519aba;
+  }
+  .icon-ignore,
+  .icon-gitignore {
+    color: #41535b;
+  }
+  .icon-fsharp {
+    color: #519aba;
+  }
+  .icon-git-commit {
+    color: #41535b;
+  }
+  .icon-go {
+    color: #519aba;
+  }
+  .icon-groovy {
+    color: #8dc149;
+  }
+  .icon-handlebars {
+    color: #e37933;
+  }
+  .icon-html {
+    color: #519aba;
+  }
+  .icon-properties {
+    color: #6d8086;
+  }
+  .icon-java {
+    color: #cc3e44;
+  }
+  .icon-javascriptreact {
+    color: #519aba;
+  }
+  .icon-javascript {
+    color: #cbcb41;
+  }
+  .icon-julia {
+    color: #a074c4;
+  }
+  .icon-tex {
+    color: #519aba;
+  }
+  .icon-latex {
+    color: #519aba;
+  }
+  .icon-less {
+    color: #519aba;
+  }
+  .icon-lua {
+    color: #519aba;
+  }
+  .icon-makefile {
+    color: #e37933;
+  }
+  .icon-markdown {
+    color: #519aba;
+  }
+  .icon-objective-c {
+    color: #cbcb41;
+  }
+  .icon-objective-cpp {
+    color: #cbcb41;
+  }
+  .icon-perl {
+    color: #519aba;
+  }
+  .icon-php {
+    color: #a074c4;
+  }
+  .icon-powershell {
+    color: #519aba;
+  }
+  .icon-python {
+    color: #519aba;
+  }
+  .icon-razor {
+    color: #519aba;
+  }
+  .icon-ruby {
+    color: #cc3e44;
+  }
+  .icon-rust {
+    color: #6d8086;
+  }
+  .icon-scss {
+    color: #f55385;
+  }
+  .icon-search-result {
+    color: #a074c4;
+  }
+  .icon-shellscript {
+    color: #8dc149;
+  }
+  .icon-sql {
+    color: #f55385;
+  }
+  .icon-swift {
+    color: #e37933;
+  }
+  .icon-typescript {
+    color: #519aba;
+  }
+  .icon-typescriptreact {
+    color: #519aba;
+  }
+  .icon-xml {
+    color: #e37933;
+  }
+  .icon-yaml {
+    color: #a074c4;
+  }
+  .icon-dockercompose,
+  .icon-docker-compose {
+    color: #f55385;
+  }
+  .icon-elixir {
+    color: #a074c4;
+  }
+  .icon-haskell {
+    color: #a074c4;
+  }
+  .icon-haxe {
+    color: #e37933;
+  }
+  .icon-kotlin {
+    color: #e37933;
+  }
+  .icon-ocaml {
+    color: #e37933;
+  }
+  .icon-rescript {
+    color: #cc3e44;
+  }
+  .icon-stylus {
+    color: #8dc149;
+  }
+  .icon-terraform {
+    color: #a074c4;
+  }
+  .icon-jsonl {
+    color: #cbcb41;
+  }
+  .icon-postcss {
+    color: #519aba;
+  }
+  .icon-django-html {
+    color: #e37933;
+  }
+  .icon-blade {
+    color: #a074c4;
+  }
+  .icon-R {
+    color: #519aba;
+  }
+  .icon-audio {
+    color: #a074c4;
+  }
+  .icon-babel {
+    color: #cbcb41;
+  }
+  .icon-bower {
+    color: #e37933;
+  }
+  .icon-c-sharp {
+    color: #519aba;
+  }
+  .icon-clock {
+    color: #519aba;
+  }
+  .icon-code-climate {
+    color: #8dc149;
+  }
+  .icon-code-search {
+    color: #a074c4;
+  }
+  .icon-coffee {
+    color: #cbcb41;
+  }
+  .icon-coldfusion {
+    color: #519aba;
+  }
+  .icon-crystal {
+    color: #d4d7d6;
+  }
+  .icon-cu {
+    color: #8dc149;
+  }
+  .icon-db {
+    color: #f55385;
+  }
+  .icon-docker {
+    color: #519aba;
+  }
+  .icon-eslint {
+    color: #a074c4;
+  }
+  .icon-ethereum {
+    color: #519aba;
+  }
+  .icon-f-sharp {
+    color: #519aba;
+  }
+  .icon-favicon {
+    color: #cbcb41;
+  }
+  .icon-firebase {
+    color: #e37933;
+  }
+  .icon-firefox {
+    color: #e37933;
+  }
+  .icon-font {
+    color: #cc3e44;
+  }
+  .icon-git {
+    color: #41535b;
+  }
+  .icon-github {
+    color: #d4d7d6;
+  }
+  .icon-gitlab {
+    color: #e37933;
+  }
+  .icon-go2 {
+    color: #519aba;
+  }
+  .icon-grails {
+    color: #8dc149;
+  }
+  .icon-grunt {
+    color: #e37933;
+  }
+  .icon-gulp {
+    color: #cc3e44;
+  }
+  .icon-hacklang {
+    color: #e37933;
+  }
+  .icon-heroku {
+    color: #a074c4;
+  }
+  .icon-hex {
+    color: #cc3e44;
+  }
+  .icon-ignored {
+    color: #41535b;
+  }
+  .icon-illustrator {
+    color: #cbcb41;
+  }
+  .icon-image {
+    color: #a074c4;
+  }
+  .icon-info {
+    color: #519aba;
+  }
+  .icon-ionic {
+    color: #519aba;
+  }
+  .icon-jenkins {
+    color: #cc3e44;
+  }
+  .icon-karma {
+    color: #8dc149;
+  }
+  .icon-livescript {
+    color: #519aba;
+  }
+  .icon-lock {
+    color: #8dc149;
+  }
+  .icon-maven {
+    color: #cc3e44;
+  }
+  .icon-notebook {
+    color: #519aba;
+  }
+  .icon-npm {
+    color: #41535b;
+  }
+  .icon-photoshop {
+    color: #519aba;
+  }
+  .icon-platformio {
+    color: #e37933;
+  }
+  .icon-prolog {
+    color: #e37933;
+  }
+  .icon-pug {
+    color: #cc3e44;
+  }
+  .icon-puppet {
+    color: #cbcb41;
+  }
+  .icon-purescript {
+    color: #d4d7d6;
+  }
+  .icon-react {
+    color: #519aba;
+  }
+  .icon-reasonml {
+    color: #cc3e44;
+  }
+  .icon-rollup {
+    color: #cc3e44;
+  }
+  .icon-salesforce {
+    color: #519aba;
+  }
+  .icon-shell {
+    color: #8dc149;
+  }
+  .icon-smarty {
+    color: #cbcb41;
+  }
+  .icon-spring {
+    color: #8dc149;
+  }
+  .icon-stylelint {
+    color: #d4d7d6;
+  }
+  .icon-sublime {
+    color: #e37933;
+  }
+  .icon-tsconfig {
+    color: #519aba;
+  }
+  .icon-video {
+    color: #f55385;
+  }
+  .icon-vite {
+    color: #cbcb41;
+  }
+  .icon-webpack {
+    color: #519aba;
+  }
+  .icon-windows {
+    color: #519aba;
+  }
+  .icon-word {
+    color: #519aba;
+  }
+  .icon-yarn {
+    color: #519aba;
+  }
+  .icon-yml {
+    color: #a074c4;
+  }
+}
+
+body.vscode-high-contrast.vscode-high-contrast-light,
+body.vscode-light {
+  .icon-default {
+    color: #bfc2c1;
+  }
+  .icon-bsl {
+    color: #b8383d;
+  }
+  .icon-mdo {
+    color: #b8383d;
+  }
+  .icon-cls {
+    color: #498ba7;
+  }
+  .icon-apex {
+    color: #498ba7;
+  }
+  .icon-asm {
+    color: #b8383d;
+  }
+  .icon-s {
+    color: #b8383d;
+  }
+  .icon-bicep {
+    color: #498ba7;
+  }
+  .icon-bzl {
+    color: #7fae42;
+  }
+  .icon-bazel {
+    color: #7fae42;
+  }
+  .icon-build {
+    color: #7fae42;
+  }
+  .icon-workspace {
+    color: #7fae42;
+  }
+  .icon-bazelignore {
+    color: #7fae42;
+  }
+  .icon-bazelversion {
+    color: #7fae42;
+  }
+  .icon-h {
+    color: #9068b0;
+  }
+  .icon-aspx {
+    color: #498ba7;
+  }
+  .icon-ascx {
+    color: #7fae42;
+  }
+  .icon-asax {
+    color: #b7b73b;
+  }
+  .icon-master {
+    color: #b7b73b;
+  }
+  .icon-hh {
+    color: #9068b0;
+  }
+  .icon-hpp {
+    color: #9068b0;
+  }
+  .icon-hxx {
+    color: #9068b0;
+  }
+  .icon-h\+\+ {
+    color: #9068b0;
+  }
+  .icon-edn {
+    color: #498ba7;
+  }
+  .icon-cfc {
+    color: #498ba7;
+  }
+  .icon-cfm {
+    color: #498ba7;
+  }
+  .icon-litcoffee {
+    color: #b7b73b;
+  }
+  .icon-config {
+    color: #627379;
+  }
+  .icon-cr {
+    color: #bfc2c1;
+  }
+  .icon-ecr {
+    color: #bfc2c1;
+  }
+  .icon-slang {
+    color: #bfc2c1;
+  }
+  .icon-cson {
+    color: #b7b73b;
+  }
+  .icon-css.map {
+    color: #498ba7;
+  }
+  .icon-sss {
+    color: #498ba7;
+  }
+  .icon-csv {
+    color: #7fae42;
+  }
+  .icon-xls {
+    color: #7fae42;
+  }
+  .icon-xlsx {
+    color: #7fae42;
+  }
+  .icon-cuh {
+    color: #9068b0;
+  }
+  .icon-hu {
+    color: #9068b0;
+  }
+  .icon-cake {
+    color: #b8383d;
+  }
+  .icon-ctp {
+    color: #b8383d;
+  }
+  .icon-d {
+    color: #b8383d;
+  }
+  .icon-doc {
+    color: #498ba7;
+  }
+  .icon-docx {
+    color: #498ba7;
+  }
+  .icon-ejs {
+    color: #b7b73b;
+  }
+  .icon-ex {
+    color: #9068b0;
+  }
+  .icon-exs {
+    color: #9068b0;
+  }
+  .icon-elm {
+    color: #498ba7;
+  }
+  .icon-ico {
+    color: #b7b73b;
+  }
+  .icon-gitconfig {
+    color: #3b4b52;
+  }
+  .icon-gitkeep {
+    color: #3b4b52;
+  }
+  .icon-gitattributes {
+    color: #3b4b52;
+  }
+  .icon-gitmodules {
+    color: #3b4b52;
+  }
+  .icon-slide {
+    color: #498ba7;
+  }
+  .icon-article {
+    color: #498ba7;
+  }
+  .icon-gd {
+    color: #498ba7;
+  }
+  .icon-godot {
+    color: #498ba7;
+  }
+  .icon-tres {
+    color: #b7b73b;
+  }
+  .icon-tscn {
+    color: #9068b0;
+  }
+  .icon-gradle {
+    color: #498ba7;
+  }
+  .icon-gsp {
+    color: #7fae42;
+  }
+  .icon-gql {
+    color: #dd4b78;
+  }
+  .icon-graphql {
+    color: #dd4b78;
+  }
+  .icon-graphqls {
+    color: #dd4b78;
+  }
+  .icon-hack {
+    color: #cc6d2e;
+  }
+  .icon-haml {
+    color: #b8383d;
+  }
+  .icon-hs {
+    color: #9068b0;
+  }
+  .icon-lhs {
+    color: #9068b0;
+  }
+  .icon-hx {
+    color: #cc6d2e;
+  }
+  .icon-hxs {
+    color: #b7b73b;
+  }
+  .icon-hxp {
+    color: #498ba7;
+  }
+  .icon-hxml {
+    color: #9068b0;
+  }
+  .icon-jade {
+    color: #b8383d;
+  }
+  .icon-class {
+    color: #498ba7;
+  }
+  .icon-classpath {
+    color: #b8383d;
+  }
+  .icon-js.map {
+    color: #b7b73b;
+  }
+  .icon-cjs.map {
+    color: #b7b73b;
+  }
+  .icon-mjs.map {
+    color: #b7b73b;
+  }
+  .icon-spec.js {
+    color: #cc6d2e;
+  }
+  .icon-spec.cjs {
+    color: #cc6d2e;
+  }
+  .icon-spec.mjs {
+    color: #cc6d2e;
+  }
+  .icon-test.js {
+    color: #cc6d2e;
+  }
+  .icon-test.cjs {
+    color: #cc6d2e;
+  }
+  .icon-test.mjs {
+    color: #cc6d2e;
+  }
+  .icon-es {
+    color: #b7b73b;
+  }
+  .icon-es5 {
+    color: #b7b73b;
+  }
+  .icon-es7 {
+    color: #b7b73b;
+  }
+  .icon-jinja {
+    color: #b8383d;
+  }
+  .icon-jinja2 {
+    color: #b8383d;
+  }
+  .icon-kt {
+    color: #cc6d2e;
+  }
+  .icon-kts {
+    color: #cc6d2e;
+  }
+  .icon-liquid {
+    color: #7fae42;
+  }
+  .icon-ls {
+    color: #498ba7;
+  }
+  .icon-argdown {
+    color: #498ba7;
+  }
+  .icon-ad {
+    color: #498ba7;
+  }
+  .icon-mustache {
+    color: #cc6d2e;
+  }
+  .icon-stache {
+    color: #cc6d2e;
+  }
+  .icon-nim {
+    color: #b7b73b;
+  }
+  .icon-nims {
+    color: #b7b73b;
+  }
+  .icon-github-issues {
+    color: #bfc2c1;
+  }
+  .icon-ipynb {
+    color: #498ba7;
+  }
+  .icon-njk {
+    color: #7fae42;
+  }
+  .icon-nunjucks {
+    color: #7fae42;
+  }
+  .icon-nunjs {
+    color: #7fae42;
+  }
+  .icon-nunj {
+    color: #7fae42;
+  }
+  .icon-njs {
+    color: #7fae42;
+  }
+  .icon-nj {
+    color: #7fae42;
+  }
+  .icon-npm-debug.log {
+    color: #3b4b52;
+  }
+  .icon-npmignore {
+    color: #b8383d;
+  }
+  .icon-npmrc {
+    color: #b8383d;
+  }
+  .icon-ml {
+    color: #cc6d2e;
+  }
+  .icon-mli {
+    color: #cc6d2e;
+  }
+  .icon-cmx {
+    color: #cc6d2e;
+  }
+  .icon-cmxa {
+    color: #cc6d2e;
+  }
+  .icon-odata {
+    color: #cc6d2e;
+  }
+  .icon-php.inc {
+    color: #9068b0;
+  }
+  .icon-pipeline {
+    color: #cc6d2e;
+  }
+  .icon-pddl {
+    color: #9068b0;
+  }
+  .icon-plan {
+    color: #7fae42;
+  }
+  .icon-happenings {
+    color: #498ba7;
+  }
+  .icon-prisma {
+    color: #498ba7;
+  }
+  .icon-pp {
+    color: #b7b73b;
+  }
+  .icon-epp {
+    color: #b7b73b;
+  }
+  .icon-purs {
+    color: #bfc2c1;
+  }
+  .icon-spec.jsx {
+    color: #cc6d2e;
+  }
+  .icon-test.jsx {
+    color: #cc6d2e;
+  }
+  .icon-cjsx {
+    color: #498ba7;
+  }
+  .icon-spec.tsx {
+    color: #cc6d2e;
+  }
+  .icon-test.tsx {
+    color: #cc6d2e;
+  }
+  .icon-re {
+    color: #b8383d;
+  }
+  .icon-res {
+    color: #b8383d;
+  }
+  .icon-resi {
+    color: #dd4b78;
+  }
+  .icon-r {
+    color: #498ba7;
+  }
+  .icon-rmd {
+    color: #498ba7;
+  }
+  .icon-erb {
+    color: #b8383d;
+  }
+  .icon-erb.html {
+    color: #b8383d;
+  }
+  .icon-html.erb {
+    color: #b8383d;
+  }
+  .icon-sass {
+    color: #dd4b78;
+  }
+  .icon-springbeans {
+    color: #7fae42;
+  }
+  .icon-slim {
+    color: #cc6d2e;
+  }
+  .icon-smarty.tpl {
+    color: #b7b73b;
+  }
+  .icon-tpl {
+    color: #b7b73b;
+  }
+  .icon-sbt {
+    color: #498ba7;
+  }
+  .icon-scala {
+    color: #b8383d;
+  }
+  .icon-sol {
+    color: #498ba7;
+  }
+  .icon-styl {
+    color: #7fae42;
+  }
+  .icon-svelte {
+    color: #b8383d;
+  }
+  .icon-soql {
+    color: #498ba7;
+  }
+  .icon-tf {
+    color: #9068b0;
+  }
+  .icon-tf.json {
+    color: #9068b0;
+  }
+  .icon-tfvars {
+    color: #9068b0;
+  }
+  .icon-tfvars.json {
+    color: #9068b0;
+  }
+  .icon-dtx {
+    color: #cc6d2e;
+  }
+  .icon-ins {
+    color: #bfc2c1;
+  }
+  .icon-toml {
+    color: #627379;
+  }
+  .icon-twig {
+    color: #7fae42;
+  }
+  .icon-spec.ts {
+    color: #cc6d2e;
+  }
+  .icon-test.ts {
+    color: #cc6d2e;
+  }
+  .icon-vala {
+    color: #627379;
+  }
+  .icon-vapi {
+    color: #627379;
+  }
+  .icon-component {
+    color: #cc6d2e;
+  }
+  .icon-vue {
+    color: #7fae42;
+  }
+  .icon-wasm {
+    color: #9068b0;
+  }
+  .icon-wat {
+    color: #9068b0;
+  }
+  .icon-pro {
+    color: #cc6d2e;
+  }
+  .icon-zig {
+    color: #cc6d2e;
+  }
+  .icon-jar {
+    color: #b8383d;
+  }
+  .icon-zip {
+    color: #b8383d;
+  }
+  .icon-wgt {
+    color: #498ba7;
+  }
+  .icon-ai {
+    color: #b7b73b;
+  }
+  .icon-psd {
+    color: #498ba7;
+  }
+  .icon-pdf {
+    color: #b8383d;
+  }
+  .icon-eot {
+    color: #b8383d;
+  }
+  .icon-ttf {
+    color: #b8383d;
+  }
+  .icon-woff {
+    color: #b8383d;
+  }
+  .icon-woff2 {
+    color: #b8383d;
+  }
+  .icon-otf {
+    color: #b8383d;
+  }
+  .icon-avif {
+    color: #9068b0;
+  }
+  .icon-gif {
+    color: #9068b0;
+  }
+  .icon-jpg {
+    color: #9068b0;
+  }
+  .icon-jpeg {
+    color: #9068b0;
+  }
+  .icon-png {
+    color: #9068b0;
+  }
+  .icon-pxm {
+    color: #9068b0;
+  }
+  .icon-svg {
+    color: #9068b0;
+  }
+  .icon-svgx {
+    color: #9068b0;
+  }
+  .icon-tiff {
+    color: #9068b0;
+  }
+  .icon-webp {
+    color: #9068b0;
+  }
+  .icon-sublime-project {
+    color: #cc6d2e;
+  }
+  .icon-sublime-workspace {
+    color: #cc6d2e;
+  }
+  .icon-mov {
+    color: #dd4b78;
+  }
+  .icon-ogv {
+    color: #dd4b78;
+  }
+  .icon-webm {
+    color: #dd4b78;
+  }
+  .icon-avi {
+    color: #dd4b78;
+  }
+  .icon-mpg {
+    color: #dd4b78;
+  }
+  .icon-mp4 {
+    color: #dd4b78;
+  }
+  .icon-mp3 {
+    color: #9068b0;
+  }
+  .icon-ogg {
+    color: #9068b0;
+  }
+  .icon-wav {
+    color: #9068b0;
+  }
+  .icon-flac {
+    color: #9068b0;
+  }
+  .icon-3ds {
+    color: #498ba7;
+  }
+  .icon-3dm {
+    color: #498ba7;
+  }
+  .icon-stl {
+    color: #498ba7;
+  }
+  .icon-obj {
+    color: #498ba7;
+  }
+  .icon-dae {
+    color: #498ba7;
+  }
+  .icon-babelrc {
+    color: #b7b73b;
+  }
+  .icon-babelrc.js {
+    color: #b7b73b;
+  }
+  .icon-babelrc.cjs {
+    color: #b7b73b;
+  }
+  .icon-bazelrc {
+    color: #455155;
+  }
+  .icon-bowerrc {
+    color: #cc6d2e;
+  }
+  .icon-dockerignore {
+    color: #455155;
+  }
+  .icon-codeclimate.yml {
+    color: #7fae42;
+  }
+  .icon-eslintrc {
+    color: #9068b0;
+  }
+  .icon-eslintrc.js {
+    color: #9068b0;
+  }
+  .icon-eslintrc.cjs {
+    color: #9068b0;
+  }
+  .icon-eslintrc.yaml {
+    color: #9068b0;
+  }
+  .icon-eslintrc.yml {
+    color: #9068b0;
+  }
+  .icon-eslintrc.json {
+    color: #9068b0;
+  }
+  .icon-eslintignore {
+    color: #455155;
+  }
+  .icon-firebaserc {
+    color: #cc6d2e;
+  }
+  .icon-gitlab-ci.yml {
+    color: #cc6d2e;
+  }
+  .icon-jshintrc {
+    color: #498ba7;
+  }
+  .icon-jscsrc {
+    color: #498ba7;
+  }
+  .icon-stylelintrc {
+    color: #bfc2c1;
+  }
+  .icon-stylelintrc.json {
+    color: #bfc2c1;
+  }
+  .icon-stylelintrc.yaml {
+    color: #bfc2c1;
+  }
+  .icon-stylelintrc.yml {
+    color: #bfc2c1;
+  }
+  .icon-stylelintrc.js {
+    color: #bfc2c1;
+  }
+  .icon-stylelintignore {
+    color: #455155;
+  }
+  .icon-direnv {
+    color: #627379;
+  }
+  .icon-env {
+    color: #627379;
+  }
+  .icon-static {
+    color: #627379;
+  }
+  .icon-slugignore {
+    color: #627379;
+  }
+  .icon-tmp {
+    color: #627379;
+  }
+  .icon-htaccess {
+    color: #627379;
+  }
+  .icon-key {
+    color: #7fae42;
+  }
+  .icon-cert {
+    color: #7fae42;
+  }
+  .icon-cer {
+    color: #7fae42;
+  }
+  .icon-crt {
+    color: #7fae42;
+  }
+  .icon-pem {
+    color: #7fae42;
+  }
+  .icon-ds_store {
+    color: #3b4b52;
+  }
+  .icon-mix {
+    color: #b8383d;
+  }
+  .icon-karma.conf.js {
+    color: #7fae42;
+  }
+  .icon-karma.conf.cjs {
+    color: #7fae42;
+  }
+  .icon-karma.conf.mjs {
+    color: #7fae42;
+  }
+  .icon-karma.conf.coffee {
+    color: #7fae42;
+  }
+  .icon-readme.md {
+    color: #498ba7;
+  }
+  .icon-readme.txt {
+    color: #498ba7;
+  }
+  .icon-readme {
+    color: #498ba7;
+  }
+  .icon-changelog.md {
+    color: #498ba7;
+  }
+  .icon-changelog.txt {
+    color: #498ba7;
+  }
+  .icon-changelog {
+    color: #498ba7;
+  }
+  .icon-changes.md {
+    color: #498ba7;
+  }
+  .icon-changes.txt {
+    color: #498ba7;
+  }
+  .icon-changes {
+    color: #498ba7;
+  }
+  .icon-version.md {
+    color: #498ba7;
+  }
+  .icon-version.txt {
+    color: #498ba7;
+  }
+  .icon-version {
+    color: #498ba7;
+  }
+  .icon-mvnw {
+    color: #b8383d;
+  }
+  .icon-pom.xml {
+    color: #b8383d;
+  }
+  .icon-tsconfig.json {
+    color: #498ba7;
+  }
+  .icon-vite.config.js {
+    color: #b7b73b;
+  }
+  .icon-vite.config.ts {
+    color: #b7b73b;
+  }
+  .icon-vite.config.mjs {
+    color: #b7b73b;
+  }
+  .icon-vite.config.mts {
+    color: #b7b73b;
+  }
+  .icon-vite.config.cjs {
+    color: #b7b73b;
+  }
+  .icon-vite.config.cts {
+    color: #b7b73b;
+  }
+  .icon-swagger.json {
+    color: #7fae42;
+  }
+  .icon-swagger.yml {
+    color: #7fae42;
+  }
+  .icon-swagger.yaml {
+    color: #7fae42;
+  }
+  .icon-mime.types {
+    color: #627379;
+  }
+  .icon-jenkinsfile {
+    color: #b8383d;
+  }
+  .icon-babel.config.js {
+    color: #b7b73b;
+  }
+  .icon-babel.config.json {
+    color: #b7b73b;
+  }
+  .icon-babel.config.cjs {
+    color: #b7b73b;
+  }
+  .icon-build.bazel {
+    color: #7fae42;
+  }
+  .icon-workspace.bazel {
+    color: #7fae42;
+  }
+  .icon-bower.json {
+    color: #cc6d2e;
+  }
+  .icon-docker-healthcheck {
+    color: #7fae42;
+  }
+  .icon-eslint.config.js {
+    color: #9068b0;
+  }
+  .icon-firebase.json {
+    color: #cc6d2e;
+  }
+  .icon-geckodriver {
+    color: #cc6d2e;
+  }
+  .icon-gruntfile.js {
+    color: #cc6d2e;
+  }
+  .icon-gruntfile.babel.js {
+    color: #cc6d2e;
+  }
+  .icon-gruntfile.coffee {
+    color: #cc6d2e;
+  }
+  .icon-gulpfile {
+    color: #b8383d;
+  }
+  .icon-gulpfile.js {
+    color: #b8383d;
+  }
+  .icon-ionic.config.json {
+    color: #498ba7;
+  }
+  .icon-ionic.project {
+    color: #498ba7;
+  }
+  .icon-platformio.ini {
+    color: #cc6d2e;
+  }
+  .icon-rollup.config.js {
+    color: #b8383d;
+  }
+  .icon-sass-lint.yml {
+    color: #dd4b78;
+  }
+  .icon-stylelint.config.js {
+    color: #bfc2c1;
+  }
+  .icon-stylelint.config.cjs {
+    color: #bfc2c1;
+  }
+  .icon-stylelint.config.mjs {
+    color: #bfc2c1;
+  }
+  .icon-yarn.clean {
+    color: #498ba7;
+  }
+  .icon-yarn.lock {
+    color: #498ba7;
+  }
+  .icon-webpack.config.js {
+    color: #498ba7;
+  }
+  .icon-webpack.config.cjs {
+    color: #498ba7;
+  }
+  .icon-webpack.config.mjs {
+    color: #498ba7;
+  }
+  .icon-webpack.config.ts {
+    color: #498ba7;
+  }
+  .icon-webpack.config.build.js {
+    color: #498ba7;
+  }
+  .icon-webpack.config.build.cjs {
+    color: #498ba7;
+  }
+  .icon-webpack.config.build.mjs {
+    color: #498ba7;
+  }
+  .icon-webpack.config.build.ts {
+    color: #498ba7;
+  }
+  .icon-webpack.common.js {
+    color: #498ba7;
+  }
+  .icon-webpack.common.cjs {
+    color: #498ba7;
+  }
+  .icon-webpack.common.mjs {
+    color: #498ba7;
+  }
+  .icon-webpack.common.ts {
+    color: #498ba7;
+  }
+  .icon-webpack.dev.js {
+    color: #498ba7;
+  }
+  .icon-webpack.dev.cjs {
+    color: #498ba7;
+  }
+  .icon-webpack.dev.mjs {
+    color: #498ba7;
+  }
+  .icon-webpack.dev.ts {
+    color: #498ba7;
+  }
+  .icon-webpack.prod.js {
+    color: #498ba7;
+  }
+  .icon-webpack.prod.cjs {
+    color: #498ba7;
+  }
+  .icon-webpack.prod.mjs {
+    color: #498ba7;
+  }
+  .icon-webpack.prod.ts {
+    color: #498ba7;
+  }
+  .icon-license {
+    color: #b7b73b;
+  }
+  .icon-licence {
+    color: #b7b73b;
+  }
+  .icon-license.txt {
+    color: #b7b73b;
+  }
+  .icon-licence.txt {
+    color: #b7b73b;
+  }
+  .icon-license.md {
+    color: #b7b73b;
+  }
+  .icon-licence.md {
+    color: #b7b73b;
+  }
+  .icon-copying {
+    color: #b7b73b;
+  }
+  .icon-copying.txt {
+    color: #b7b73b;
+  }
+  .icon-copying.md {
+    color: #b7b73b;
+  }
+  .icon-compiling {
+    color: #cc6d2e;
+  }
+  .icon-compiling.txt {
+    color: #cc6d2e;
+  }
+  .icon-compiling.md {
+    color: #cc6d2e;
+  }
+  .icon-contributing {
+    color: #b8383d;
+  }
+  .icon-contributing.txt {
+    color: #b8383d;
+  }
+  .icon-contributing.md {
+    color: #b8383d;
+  }
+  .icon-qmakefile {
+    color: #9068b0;
+  }
+  .icon-omakefile {
+    color: #627379;
+  }
+  .icon-cmakelists.txt {
+    color: #498ba7;
+  }
+  .icon-procfile {
+    color: #9068b0;
+  }
+  .icon-todo {
+    color: inherit;
+  }
+  .icon-todo.txt {
+    color: inherit;
+  }
+  .icon-todo.md {
+    color: inherit;
+  }
+  .icon-bat {
+    color: #498ba7;
+  }
+  .icon-clojure {
+    color: #7fae42;
+  }
+  .icon-coffeescript {
+    color: #b7b73b;
+  }
+  .icon-jsonc {
+    color: #b7b73b;
+  }
+  .icon-json {
+    color: #b7b73b;
+  }
+  .icon-c {
+    color: #498ba7;
+  }
+  .icon-cpp {
+    color: #498ba7;
+  }
+  .icon-cuda-cpp {
+    color: #7fae42;
+  }
+  .icon-csharp {
+    color: #498ba7;
+  }
+  .icon-css {
+    color: #498ba7;
+  }
+  .icon-dart {
+    color: #498ba7;
+  }
+  .icon-dockerfile {
+    color: #498ba7;
+  }
+  .icon-ignore,
+  .icon-gitignore {
+    color: #3b4b52;
+  }
+  .icon-fsharp {
+    color: #498ba7;
+  }
+  .icon-git-commit {
+    color: #3b4b52;
+  }
+  .icon-go {
+    color: #498ba7;
+  }
+  .icon-groovy {
+    color: #7fae42;
+  }
+  .icon-handlebars {
+    color: #cc6d2e;
+  }
+  .icon-html {
+    color: #498ba7;
+  }
+  .icon-properties {
+    color: #627379;
+  }
+  .icon-java {
+    color: #b8383d;
+  }
+  .icon-javascriptreact {
+    color: #498ba7;
+  }
+  .icon-javascript {
+    color: #b7b73b;
+  }
+  .icon-julia {
+    color: #9068b0;
+  }
+  .icon-tex {
+    color: #498ba7;
+  }
+  .icon-latex {
+    color: #498ba7;
+  }
+  .icon-less {
+    color: #498ba7;
+  }
+  .icon-lua {
+    color: #498ba7;
+  }
+  .icon-makefile {
+    color: #cc6d2e;
+  }
+  .icon-markdown {
+    color: #498ba7;
+  }
+  .icon-objective-c {
+    color: #b7b73b;
+  }
+  .icon-objective-cpp {
+    color: #b7b73b;
+  }
+  .icon-perl {
+    color: #498ba7;
+  }
+  .icon-php {
+    color: #9068b0;
+  }
+  .icon-powershell {
+    color: #498ba7;
+  }
+  .icon-python {
+    color: #498ba7;
+  }
+  .icon-razor {
+    color: #498ba7;
+  }
+  .icon-ruby {
+    color: #b8383d;
+  }
+  .icon-rust {
+    color: #627379;
+  }
+  .icon-scss {
+    color: #dd4b78;
+  }
+  .icon-search-result {
+    color: #9068b0;
+  }
+  .icon-shellscript {
+    color: #7fae42;
+  }
+  .icon-sql {
+    color: #dd4b78;
+  }
+  .icon-swift {
+    color: #cc6d2e;
+  }
+  .icon-typescript {
+    color: #498ba7;
+  }
+  .icon-typescriptreact {
+    color: #498ba7;
+  }
+  .icon-xml {
+    color: #cc6d2e;
+  }
+  .icon-dockercompose,
+  .icon-docker-compose {
+    color: #dd4b78;
+  }
+  .icon-yaml {
+    color: #9068b0;
+  }
+  .icon-elixir {
+    color: #9068b0;
+  }
+  .icon-haskell {
+    color: #9068b0;
+  }
+  .icon-haxe {
+    color: #cc6d2e;
+  }
+  .icon-kotlin {
+    color: #cc6d2e;
+  }
+  .icon-ocaml {
+    color: #cc6d2e;
+  }
+  .icon-rescript {
+    color: #b8383d;
+  }
+  .icon-stylus {
+    color: #7fae42;
+  }
+  .icon-terraform {
+    color: #9068b0;
+  }
+  .icon-jsonl {
+    color: #b7b73b;
+  }
+  .icon-postcss {
+    color: #498ba7;
+  }
+  .icon-django-html {
+    color: #cc6d2e;
+  }
+  .icon-blade {
+    color: #9068b0;
+  }
+  .icon-R {
+    color: #498ba7;
+  }
+  .icon-audio {
+    color: #9068b0;
+  }
+  .icon-babel {
+    color: #b7b73b;
+  }
+  .icon-bower {
+    color: #cc6d2e;
+  }
+  .icon-c-sharp {
+    color: #498ba7;
+  }
+  .icon-clock {
+    color: #498ba7;
+  }
+  .icon-code-climate {
+    color: #7fae42;
+  }
+  .icon-code-search {
+    color: #9068b0;
+  }
+  .icon-coffee {
+    color: #b7b73b;
+  }
+  .icon-coldfusion {
+    color: #498ba7;
+  }
+  .icon-crystal {
+    color: #bfc2c1;
+  }
+  .icon-cu {
+    color: #7fae42;
+  }
+  .icon-db {
+    color: #dd4b78;
+  }
+  .icon-docker {
+    color: #498ba7;
+  }
+  .icon-eslint {
+    color: #9068b0;
+  }
+  .icon-ethereum {
+    color: #498ba7;
+  }
+  .icon-f-sharp {
+    color: #498ba7;
+  }
+  .icon-favicon {
+    color: #b7b73b;
+  }
+  .icon-firebase {
+    color: #cc6d2e;
+  }
+  .icon-firefox {
+    color: #cc6d2e;
+  }
+  .icon-font {
+    color: #b8383d;
+  }
+  .icon-git {
+    color: #3b4b52;
+  }
+  .icon-github {
+    color: #bfc2c1;
+  }
+  .icon-gitlab {
+    color: #cc6d2e;
+  }
+  .icon-go2 {
+    color: #498ba7;
+  }
+  .icon-grails {
+    color: #7fae42;
+  }
+  .icon-grunt {
+    color: #cc6d2e;
+  }
+  .icon-gulp {
+    color: #b8383d;
+  }
+  .icon-hacklang {
+    color: #cc6d2e;
+  }
+  .icon-heroku {
+    color: #9068b0;
+  }
+  .icon-hex {
+    color: #b8383d;
+  }
+  .icon-ignored {
+    color: #3b4b52;
+  }
+  .icon-illustrator {
+    color: #b7b73b;
+  }
+  .icon-image {
+    color: #9068b0;
+  }
+  .icon-info {
+    color: #498ba7;
+  }
+  .icon-ionic {
+    color: #498ba7;
+  }
+  .icon-jenkins {
+    color: #b8383d;
+  }
+  .icon-karma {
+    color: #7fae42;
+  }
+  .icon-livescript {
+    color: #498ba7;
+  }
+  .icon-lock {
+    color: #7fae42;
+  }
+  .icon-maven {
+    color: #b8383d;
+  }
+  .icon-notebook {
+    color: #498ba7;
+  }
+  .icon-npm {
+    color: #3b4b52;
+  }
+  .icon-photoshop {
+    color: #498ba7;
+  }
+  .icon-platformio {
+    color: #cc6d2e;
+  }
+  .icon-prolog {
+    color: #cc6d2e;
+  }
+  .icon-pug {
+    color: #b8383d;
+  }
+  .icon-puppet {
+    color: #b7b73b;
+  }
+  .icon-purescript {
+    color: #bfc2c1;
+  }
+  .icon-react {
+    color: #498ba7;
+  }
+  .icon-reasonml {
+    color: #b8383d;
+  }
+  .icon-rollup {
+    color: #b8383d;
+  }
+  .icon-salesforce {
+    color: #498ba7;
+  }
+  .icon-shell {
+    color: #7fae42;
+  }
+  .icon-smarty {
+    color: #b7b73b;
+  }
+  .icon-spring {
+    color: #7fae42;
+  }
+  .icon-stylelint {
+    color: #bfc2c1;
+  }
+  .icon-sublime {
+    color: #cc6d2e;
+  }
+  .icon-tsconfig {
+    color: #498ba7;
+  }
+  .icon-video {
+    color: #dd4b78;
+  }
+  .icon-vite {
+    color: #b7b73b;
+  }
+  .icon-webpack {
+    color: #498ba7;
+  }
+  .icon-windows {
+    color: #498ba7;
+  }
+  .icon-word {
+    color: #498ba7;
+  }
+  .icon-yarn {
+    color: #498ba7;
+  }
+  .icon-yml {
+    color: #9068b0;
+  }
+}

@@ -22,3 +22,12 @@ reasonix.toml
 
 # Built MCP helper, packaged read-only by Tauri.
 /windows/tauri/src-tauri/helpers/*.exe
+
+# Built CodeBuddy plugin Node sidecar, packaged read-only by Tauri.
+/Plugins/win/Official/CodeBuddy/host/main.js
+/Plugins/win/Official/CodeBuddy/host/main-test.js
+
+# Local verification session output.
+/tauri-dev.out.log
+/tauri-dev.err.log
+/windows/tauri/target-verify/

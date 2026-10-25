@@ -1,0 +1,364 @@
+{
+  "launchedAt": "2026-10-25T03:13:41.650Z",
+  "pid": 13180,
+  "versions": {
+    "node": "22.22.2",
+    "v8": "12.4.254.21-node.39"
+  },
+  "platform": "win32",
+  "arch": "x64",
+  "extensionId": "tencentcloud.codingcopilot",
+  "entries": [
+    {
+      "timestamp": "2026-10-25T03:13:42.755Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "Codebase endpoint is not configured",
+      "stack": "Error: Codebase endpoint is not configured\n    at CodebaseManagerImpl.buildConfiguration (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3072606)\n    at CodebaseManagerImpl.setConfiguration (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070370)\n    at SafeSubscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070236)\n    at SafeSubscriber.__tryOrUnsub (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1111413)\n    at SafeSubscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1110454)\n    at Subscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109404)\n    at Subscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at DistinctUntilChangedSubscriber._next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:2836983)\n    at DistinctUntilChangedSubscriber.Subscriber.next (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at BehaviorSubject._subscribe (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:69:2540189)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:57.028Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:57.121Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:57.624Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:58.036Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:58.129Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:58.633Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:59.041Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:59.138Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:13:59.640Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:00.048Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:00.144Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:00.644Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:01.051Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:01.145Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:01.647Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:02.054Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:02.147Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:02.650Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:03.061Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:03.157Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:03.661Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:04.067Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:04.162Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:04.667Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:05.078Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:05.170Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:05.673Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:06.079Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:06.189Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:06.703Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:07.082Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:07.196Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:07.711Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:08.093Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:08.219Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:08.720Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:09.101Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:09.227Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:09.729Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:10.108Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:10.234Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:10.735Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:11.112Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:11.223Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:11.736Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:12.113Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:12.254Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:12.758Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at Object.send (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1068503)\n    at RPCMultiplexer.sendMessages (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448683)\n    at RPCMultiplexer.sendAccumulated (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:4:1448419)"
+    },
+    {
+      "timestamp": "2026-10-25T03:14:13.119Z",
+      "type": "uncaught_exception",
+      "errorName": "Error",
+      "errorMessage": "EPIPE: broken pipe, write",
+      "stack": "Error: EPIPE: broken pipe, write\n    at Socket._write (node:internal/net:63:18)\n    at writeOrBuffer (node:internal/streams/writable:572:12)\n    at _write (node:internal/streams/writable:501:10)\n    at Socket.Writable.write (node:internal/streams/writable:510:10)\n    at Bridge.write (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:130:17)\n    at Bridge.emit (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:50:10)\n    at Object.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\host\\main.js:243:16)\n    at FirstFrameWakeupPump.postMessage (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:1060129)\n    at FirstFrameWakeupPump.sendWake (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760927)\n    at Timeout._onTimeout (D:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:10:760543)"
+    }
+  ],
+  "droppedCount": 533
+}

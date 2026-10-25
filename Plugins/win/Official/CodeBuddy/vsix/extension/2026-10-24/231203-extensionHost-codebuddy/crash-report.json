@@ -1,0 +1,28 @@
+{
+  "launchedAt": "2026-10-24T15:12:03.221Z",
+  "pid": 2492,
+  "versions": {
+    "node": "22.12.0",
+    "v8": "12.4.254.21-node.21"
+  },
+  "platform": "win32",
+  "arch": "x64",
+  "extensionId": "tencentcloud.codingcopilot",
+  "entries": [
+    {
+      "timestamp": "2026-10-24T15:12:04.485Z",
+      "type": "unhandled_rejection",
+      "errorName": "Error",
+      "errorMessage": "Codebase endpoint is not configured",
+      "stack": "Error: Codebase endpoint is not configured\n    at CodebaseManagerImpl.buildConfiguration (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3072606)\n    at CodebaseManagerImpl.setConfiguration (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070370)\n    at SafeSubscriber._next (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:66:3070236)\n    at SafeSubscriber.__tryOrUnsub (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1111413)\n    at SafeSubscriber.next (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1110454)\n    at Subscriber._next (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109404)\n    at Subscriber.next (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at DistinctUntilChangedSubscriber._next (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:2836983)\n    at DistinctUntilChangedSubscriber.Subscriber.next (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:1:1109034)\n    at BehaviorSubject._subscribe (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:69:2540189)"
+    },
+    {
+      "timestamp": "2026-10-24T15:12:11.625Z",
+      "type": "unhandled_rejection",
+      "errorName": "TypeError",
+      "errorMessage": "Pn.default.RelativePattern is not a constructor",
+      "stack": "TypeError: Pn.default.RelativePattern is not a constructor\n    at McpAgentDispatcherImpl.watchFile (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:84:1221918)\n    at McpAgentDispatcherImpl.watchMcpSettingsFile (d:\\code\\Lithe-IDEA\\Plugins\\win\\Official\\CodeBuddy\\vsix\\extension\\out\\extension\\index.js:84:1220959)"
+    }
+  ],
+  "droppedCount": 0
+}

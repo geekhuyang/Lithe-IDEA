@@ -117,6 +117,24 @@ try {
     assert.notEqual(rejected.status, 0);
     assert.match(rejected.stderr, /bundled-ui-fonts is isolated/);
   });
+  await test("the vendored CodeBuddy extension and its compiled host bundle stay per-worktree", { timeout: 15000 }, async () => {
+    const listed = run(process.execPath, [reuseScript, "--list"]);
+    assertSucceeded(listed);
+    assert.ok(!listed.stdout.includes("codebuddy-vendored-extension"));
+    assert.ok(!listed.stdout.includes("codebuddy-host-bundle"));
+    const registry = JSON.parse(await fs.readFile(path.join(scriptDirectory, "worktree-resources.json"), "utf8"));
+    const vendored = registry.excludedResources.find(resource => resource.id === "codebuddy-vendored-extension");
+    assert.equal(vendored.reusable, false);
+    assert.ok(vendored.locations.includes("Plugins/win/Official/CodeBuddy/vsix/extension/"));
+    const bundle = registry.excludedResources.find(resource => resource.id === "codebuddy-host-bundle");
+    assert.equal(bundle.reusable, false);
+    assert.ok(bundle.locations.includes("Plugins/win/Official/CodeBuddy/host/main.js"));
+    for (const identifier of ["codebuddy-vendored-extension", "codebuddy-host-bundle"]) {
+      const refused = reuse(["--resource", identifier]);
+      assert.notEqual(refused.status, 0);
+      assert.match(diagnostics(refused), new RegExp(`${identifier}.*cannot be reused`));
+    }
+  });
   await test("AutoBuild plugin mirror staging is validated and never reused", { timeout: 15000 }, async () => {
     const registry = JSON.parse(await fs.readFile(path.join(scriptDirectory, "worktree-resources.json"), "utf8"));
     const resource = registry.excludedResources.find(item => item.id === "autobuild-plugin-mirror-staging");

@@ -4,6 +4,7 @@ import { useTranslation } from "@/i18n/locale-provider";
 import { Button } from "@/ui/button";
 import { cn } from "@/utils/cn";
 import {
+  extensionToolWindowViewIdFor,
   findExtensionToolWindow,
 } from "@/features/layout/services/extension-tool-window-registry";
 import { applyRightToolWindowIntent } from "@/features/layout/actions/right-tool-window-actions";
@@ -36,7 +37,9 @@ export function ExtensionToolWindow({ isVisible }: ExtensionToolWindowProps) {
           type="button"
           variant="ghost"
           size="icon-xs"
-          onClick={() => applyRightToolWindowIntent(toolWindow.id, "close")}
+          onClick={() =>
+            applyRightToolWindowIntent(extensionToolWindowViewIdFor(toolWindow), "close")
+          }
           tooltip={t("commandPalette.close")}
           aria-label={t("commandPalette.close")}
           tooltipSide="bottom"

@@ -1,0 +1,28 @@
+{
+  "id": "codebuddy-plugin-chat",
+  "area": "AI",
+  "group": "AI 插件",
+  "capability": "CodeBuddy 官方插件：右侧活动栏的 CodeBuddy 对话工具窗。原版 VS Code 扩展（vendor 自 JetBrains 插件发布包中的 vsix）在本地 Node sidecar 中运行，Lithe 用自建的 vscode API shim 与 stdio 换行 JSON 桥接替代原插件的扩展宿主；聊天 WebView 由扩展自己产出带 CSP nonce 的 HTML，Lithe 以 iframe 承载并双向转发消息",
+  "macos": {
+    "evidence": [
+      "macos/Sources/Lithe"
+    ],
+    "implementationStatus": "platform-specific",
+    "verificationStatus": "not-applicable"
+  },
+  "windows": {
+    "evidence": [
+      "Plugins/win/Official/CodeBuddy",
+      "Plugins/win/Official/CodeBuddy/host/vscode-shim.ts",
+      "Plugins/win/Official/CodeBuddy/host/main.ts",
+      "Plugins/win/Official/CodeBuddy/components/codebuddy-chat-pane.tsx",
+      "Plugins/win/Official/CodeBuddy/components/codebuddy-webview-bridge.ts",
+      "windows/tauri/src-tauri/src/codebuddy_host.rs",
+      "scripts/build-codebuddy-host.mjs"
+    ],
+    "implementationStatus": "implemented",
+    "verificationStatus": "pending"
+  },
+  "owner": "AI",
+  "verification": "在扩展页启用 CodeBuddy，确认右侧活动栏出现 CodeBuddy 按钮；打开后状态行从“正在启动”变为“已就绪 · N 个命令”，聊天 WebView 渲染并可收发消息（sidecar 日志出现 webview.postMessage 与 webview.message 往返）。未安装 Node 时状态行显示明确指引并提供重试。本地等价验证：node scripts/build-codebuddy-host.mjs 后用 node Plugins/win/Official/CodeBuddy/host/main.js --extension-root <vsix/extension> 启动，确认 stdout 出现 {\"type\":\"ready\"} 与 webview.html。提交信息生成仍是后续项，不在本条能力范围内。"
+}

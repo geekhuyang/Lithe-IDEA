@@ -80,6 +80,13 @@ export function extensionToolWindowViewId(extensionId: string, localId: string):
   return `${EXTENSION_VIEW_PREFIX}${extensionId}.${localId}`;
 }
 
+/** The right-sidebar view id of an already registered tool window. */
+export function extensionToolWindowViewIdFor(
+  toolWindow: Pick<RegisteredExtensionToolWindow, "id">,
+): SidebarView {
+  return `${EXTENSION_VIEW_PREFIX}${toolWindow.id}`;
+}
+
 /** Returns the registered window when the active right-sidebar view is one. */
 export function findExtensionToolWindow(
   view: SidebarView,

@@ -1,0 +1,55 @@
+html,
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: var(--codebuddy-sideBar-background);
+  height: 100vh;
+  width: 100vw;
+  border: none !important;
+  min-width: 170px;
+  font-family: "PingFang SC", sans-serif;
+}
+
+body.ide-xcode {
+  --cb-scrollbar-width: auto;
+}
+
+code {
+  font-family: var(--vscode-editor-font-family);
+}
+
+.radix-themes:where([data-has-background='true']) {
+  background: var(--codebuddy-sideBar-background) !important;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  // 去掉 960px 硬上限，让大屏跟随外层容器自然撑满
+  max-width: none;
+  margin: 0;
+  background-color: var(--codebuddy-sideBar-background);
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.has-scrollbar {
+  scrollbar-color: var(--vscode-scrollbarSlider-background) transparent;
+  scrollbar-width: thin;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}

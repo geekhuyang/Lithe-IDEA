@@ -393,6 +393,16 @@ MCP 发现页读取的官方 Registry 在线响应登记为 `mcp-registry-metada
 不从其他工作树或已安装应用提取。运行时只读并在内存缓存解码结果，不访问图标网络，
 不改写签名包或 Sparkle delta 基线；Windows 未消费此 macOS 资源目录。
 
+Windows 官方 CodeBuddy 插件的内置 VS Code 扩展 `Plugins/win/Official/CodeBuddy/vsix/extension/`
+登记为 `codebuddy-vendored-extension`：它是随 Git 跟踪的固定输入（来源与许可记录在
+`vsix/README.md`），没有下载缓存、生成 identity stamp 或跨工作树复制阶段，
+由目标工作树检出后经 `tauri.conf.json` 的 `bundle.resources` 在打包阶段复制；
+运行时只读，不从其他工作树或已安装应用提取，也不改写签名包与更新基线。
+宿主桥接产物 `Plugins/win/Official/CodeBuddy/host/main.js` 登记为 `codebuddy-host-bundle`：
+它由 `scripts/build-codebuddy-host.mjs` 在本工作树内从 `host/*.ts` 编译，已被 Git 忽略，
+并且已接入 Tauri 的 `beforeDevCommand` 与 `beforeBuildCommand`，因此每个工作树各自编译、
+没有允许复制的阶段；跨工作树复制只会掩盖过期的桥接代码。
+
 Cargo 社区插件在 [独立仓库](https://github.com/Lithe-IDEA/lithe-plugin-cargo) 中构建，
 最终 ZIP、摘要、vendored Node SDK 和集成测试产物由该仓库的 `dist/`、`.artifacts/` 持有，
 不作为 Lithe 主仓库的下载缓存或可复用资源。Cargo 专属清单、模型金样与兼容性测试也由

@@ -78,9 +78,11 @@ describe("Windows display language", () => {
     expect(translate("quickOpen.filesCount", { count: 66 })).toBe("66 个文件");
     expect(translate("quickOpen.contentMatchesCount", { count: 3 })).toBe("3 处内容匹配");
     expect(translate("quickOpen.matchLine", { line: 12 })).toBe("第 12 行");
-    expect(translate("codebuddy.cliReady")).toBe("CodeBuddy CLI 已就绪");
-    expect(translate("codebuddy.cliMissingHint")).toContain("npm install -g");
-    expect(createTranslator("en-US")("codebuddy.cliMissingHint")).toContain("npm install -g");
+    expect(translate("codebuddy.hostReady", { count: 143 })).toBe("CodeBuddy 已就绪 · 143 个命令");
+    expect(translate("codebuddy.CODEBUDDY_NODE_NOT_FOUND")).toContain("Node");
+    expect(createTranslator("en-US")("codebuddy.hostReady", { count: 3 })).toBe(
+      "CodeBuddy ready · 3 commands",
+    );
     expect(translate("tabs.pin")).toBe("固定标签页");
     expect(translate("tabs.closeOthers")).toBe("关闭其他");
     expect(translate("editor.aiInlineEdit")).toBe("AI 行内编辑");

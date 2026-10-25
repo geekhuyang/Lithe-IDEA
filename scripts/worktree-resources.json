@@ -345,6 +345,26 @@
       ],
       "identity": "User-requested, bounded SDK connections and mutable native exclusion rules. No generated build identity, version/platform/architecture/toolchain stamp or reusable artifact.",
       "reason": "Probes run only after an explicit action, list metadata without tool calls, and cancel on page exit. Process trees and HTTP sessions are cleaned up; temporary policy snapshots stay in memory. Native rules use the existing platform atomic writer and Application Support backups. User preferences remember added exclusion ownership and retained Codex allow/deny tool names after removal, never credentials. Retained filters survive page/process exit until re-registration and do not prove live source ownership. No copy stage, runtime bundle writes, or cross-worktree transfer is allowed. Upstream package caches created by an explicitly run command remain owned by that runtime, not Lithe build resources."
+    },
+    {
+      "id": "codebuddy-vendored-extension",
+      "reusable": false,
+      "locations": [
+        "Plugins/win/Official/CodeBuddy/vsix/extension/",
+        "<app-bundle>/resources/codebuddy/vsix/extension/"
+      ],
+      "identity": "MIT-licensed CodeBuddy VS Code extension copied byte-for-byte from the JetBrains release archive recorded in Plugins/win/Official/CodeBuddy/vsix/README.md (coding-copilot-jetbrains 4.12.41911495-8d24ca2b). Tracked by Git with no version stamp beyond that archive revision; independent of platform architecture and build toolchain.",
+      "reason": "Check the vendor out through Git in the target worktree and let Tauri package it from there. Never edit the vendored files, never copy them from another worktree or from an installed application, and never write into the packaged copy at runtime: it is part of the signed, read-only installation and of the update baseline."
+    },
+    {
+      "id": "codebuddy-host-bundle",
+      "reusable": false,
+      "locations": [
+        "Plugins/win/Official/CodeBuddy/host/main.js",
+        "<app-bundle>/resources/codebuddy/host/main.js"
+      ],
+      "identity": "Compiled by scripts/build-codebuddy-host.mjs (bun build, CommonJS, node target) from the same worktree's host/*.ts sources; git-ignored output with no version, platform, architecture or toolchain identity stamp.",
+      "reason": "Each worktree compiles its own bundle, and the script already runs in Tauri's beforeDevCommand and beforeBuildCommand, so a copy stage would only mask a stale bridge. Never copy from another worktree or from an installed application, and never rewrite the packaged copy at runtime."
     }
   ]
 }
