@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "@/i18n/locale-provider";
 import { convertFileSrc, openUrl } from "@/platform/tauri-core";
+import { workspaceRuntimeRegistry } from "@/features/workspace/runtime/workspace-runtime-registry";
+import { fetch as httpFetch } from "@tauri-apps/plugin-http";
 import { Button } from "@/ui/button";
 import { Spinner } from "@/ui/spinner";
 import { cn } from "@/utils/cn";
@@ -18,6 +20,27 @@ import { assetUrlOrigin, buildWebviewDocument, rewriteWebviewAssets } from "./co
  */
 
 const MAX_LOG_LINES = 200;
+
+/**
+ * The webview's liveness protocol: bus ping/ack pairs (string-encoded
+ * `{"type":7|8,"id":N}`), first-frame wakes and heartbeats, roughly one round
+ * per second. Healthy background traffic — excluded from the relay log.
+ */
+function isWebviewBusNoise(message: unknown): boolean {
+  if (typeof message === "string") {
+    return message.includes('"type":7') || message.includes('"type":8');
+  }
+  if (message && typeof message === "object") {
+    const type = String((message as { type?: unknown }).type ?? "");
+    return (
+      type === "__cb_first_frame_wake__" ||
+      type.includes("heartbeat") ||
+      type === "7" ||
+      type === "8"
+    );
+  }
+  return false;
+}
 
 /** Error codes the Rust host raises; each one has a localized explanation. */
 const HOST_ERROR_CODES = [
@@ -65,6 +88,7 @@ export function CodeBuddyChatPane() {
     (event: HostEvent) => {
       const request = readHostRequest(event);
       if (request) {
+        appendLog(`[request] ${request.method} ${JSON.stringify(request.params).slice(0, 200)}\n`);
         // The extension probes IDE context keys and bundled assets; both are
         // answered locally without involving the sidecar's command table.
         // The host can already be gone (the panel unmounted), and a failed
@@ -121,6 +145,13 @@ export function CodeBuddyChatPane() {
         case "webview.postMessage": {
           // The extension talks to its own webview; deliver into the iframe so
           // the injected bridge can reach `onDidReceiveMessage` listeners.
+          if (!isWebviewBusNoise(event.params.message)) {
+            try {
+              appendLog(`<wv ${String(JSON.stringify(event.params.message)).slice(0, 200)}\n`);
+            } catch {
+              // Logging must never break the relay.
+            }
+          }
           const handle = String(event.params.handle ?? "");
           const frame = framesRef.current.get(handle);
           frame?.contentWindow?.postMessage(
@@ -199,21 +230,109 @@ export function CodeBuddyChatPane() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Relay iframe messages into the sidecar.
+  // Relay iframe messages into the sidecar, and answer the webview's proxied
+  // fetches through the Tauri HTTP plugin (the asset origin's calls have no
+  // CORS headers to lean on).
   useEffect(() => {
     const onMessage = (event: MessageEvent) => {
       const data = event.data as {
         source?: string;
         handle?: string;
+        type?: string;
+        id?: string;
+        url?: string;
+        method?: string;
+        headers?: Record<string, string>;
+        body?: string | null;
         message?: unknown;
       };
       if (data?.source !== "lithe-codebuddy-webview" || !data.handle) return;
+      if (data.type === "proxy-fetch") {
+        appendLog(`[wv-fetch] ${data.method ?? "GET"} ${String(data.url).slice(0, 120)}\n`);
+        const handle = data.handle;
+        const requestId = data.id;
+        const requestUrl = data.url;
+        if (!handle || !requestId || !requestUrl) return;
+        const reply = (payload: Record<string, unknown>) => {
+          framesRef.current
+            .get(handle)
+            ?.contentWindow?.postMessage(
+              { source: "lithe-codebuddy-host", handle, ...payload },
+              "*",
+            );
+        };
+        void (async () => {
+          try {
+            const response = await httpFetch(requestUrl, {
+              method: data.method ?? "GET",
+              headers: data.headers ?? {},
+              body: data.body ?? undefined,
+            });
+            const headers: Record<string, string> = {};
+            response.headers.forEach((value, key) => {
+              headers[key] = value;
+            });
+            reply({
+              type: "proxy-fetch-result",
+              id: data.id,
+              status: response.status,
+              statusText: response.statusText,
+              headers,
+              body: await response.text(),
+            });
+          } catch (proxyError) {
+            reply({
+              type: "proxy-fetch-result",
+              id: data.id,
+              error:
+                proxyError instanceof Error ? proxyError.message : String(proxyError),
+            });
+          }
+        })();
+        return;
+      }
+      // The relay log skips the webview's ~1/second liveness pings (bus
+      // type 7/8 pairs, first-frame wakes, heartbeats) — they are healthy
+      // background traffic and would otherwise flood the log.
+      if (!isWebviewBusNoise(data.message)) {
+        try {
+          appendLog(`[wv>${String(JSON.stringify(data.message)).slice(0, 160)}\n`);
+        } catch {
+          // Logging must never break the relay.
+        }
+      }
       void codebuddyHostClient
         .call(`webview.message:${data.handle}`, { message: data.message })
         .catch(() => undefined);
     };
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
+  }, []);
+
+  // Push the active workspace root to the sidecar whenever the host becomes
+  // ready or the user switches workspace. The agent's file tools resolve
+  // everything relative to this root.
+  useEffect(() => {
+    if (phase !== "ready") return;
+    const pushRoot = () => {
+      const path = workspaceRuntimeRegistry.getActiveWorkspace()?.descriptor.path;
+      if (!path) return;
+      void codebuddyHostClient
+        .call("workspace.setRoot", { path })
+        .catch(() => undefined);
+    };
+    pushRoot();
+    const unsubscribe = workspaceRuntimeRegistry.subscribe(pushRoot);
+    return () => {
+      unsubscribe();
+    };
+  }, [phase]);
+
+  /** Runs an extension command from the title bar (new chat, settings, logout). */
+  const runCommand = useCallback((localId: string) => {
+    void codebuddyHostClient
+      .call("commands.execute", { id: `tencentcloud.codingcopilot.${localId}`, args: [] })
+      .catch(() => undefined);
   }, []);
 
   const entries = useMemo(() => [...documents.entries()], [documents]);
@@ -240,6 +359,37 @@ export function CodeBuddyChatPane() {
               : t("codebuddy.hostStarting")}
         </span>
         {phase === "starting" && <Spinner label={t("codebuddy.hostStarting")} compact />}
+        {phase === "ready" && (
+          <>
+            <Button
+              size="xs"
+              variant="ghost"
+              aria-label={t("codebuddy.actionNewChat")}
+              title={t("codebuddy.actionNewChat")}
+              onClick={() => runCommand("chat.startNewChat")}
+            >
+              {t("codebuddy.actionNewChat")}
+            </Button>
+            <Button
+              size="xs"
+              variant="ghost"
+              aria-label={t("codebuddy.actionSettings")}
+              title={t("codebuddy.actionSettings")}
+              onClick={() => runCommand("settings.show")}
+            >
+              {t("codebuddy.actionSettings")}
+            </Button>
+            <Button
+              size="xs"
+              variant="ghost"
+              aria-label={t("codebuddy.actionLogout")}
+              title={t("codebuddy.actionLogout")}
+              onClick={() => runCommand("logout")}
+            >
+              {t("codebuddy.actionLogout")}
+            </Button>
+          </>
+        )}
         {phase === "failed" && (
           <Button size="xs" variant="ghost" onClick={() => void startHost()}>
             {t("codebuddy.retry")}

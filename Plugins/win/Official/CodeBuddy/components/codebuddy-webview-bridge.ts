@@ -96,6 +96,16 @@ function widenCspContent(content: string, origin: string): string {
     .map((directive) => {
       const [name, ...values] = directive.split(/\s+/);
       if (!WIDENED_CSP_DIRECTIVES.has(name)) return directive;
+      if (name === "connect-src") {
+        // The chat page fetches the mode/model/skills data from the CodeBuddy
+        // API hosts itself; the shipped policy only lists the telemetry
+        // domains, so every API call died on CSP and the input toolbar
+        // rendered empty. Allow all secure endpoints, matching what the
+        // original IDE hosts' injector does.
+        const extra = ["https:", origin];
+        const missing = extra.filter((value) => !values.includes(value));
+        return missing.length === 0 ? directive : `${name} ${values.join(" ")} ${missing.join(" ")}`;
+      }
       if (values.includes(origin)) return directive;
       return `${name} ${values.join(" ")} ${origin}`;
     })
@@ -116,7 +126,7 @@ export function buildWebviewDocument(
   const nonceAttribute = nonce ? ` nonce="${nonce}"` : "";
   const bridge = `<script${nonceAttribute}>(function(){
     var handle = ${JSON.stringify(handle)};
-    var state = { handle: handle };
+    var state = { handle: handle, fetchSeq: 0, resolvers: {} };
     var api = {
       postMessage: function (message) {
         parent.postMessage({ source: 'lithe-codebuddy-webview', handle: handle, message: message }, '*');
@@ -132,8 +142,82 @@ export function buildWebviewDocument(
       setState: function (snapshot) { state.snapshot = snapshot; }
     };
     window.acquireVsCodeApi = function () { return api; };
+    // The chat page fetches its mode/model/skills data from the CodeBuddy API
+    // hosts itself. The asset-protocol origin makes those calls cross-origin
+    // and the API sends no CORS headers, so remote fetches are relayed to the
+    // pane, which runs them through the Tauri HTTP plugin (no CORS applies).
+    var nativeFetch = window.fetch ? window.fetch.bind(window) : null;
+    function headerObject(input) {
+      var result = {};
+      try {
+        if (input && typeof input.forEach === 'function') {
+          input.forEach(function (value, key) { result[key] = value; });
+        } else if (input && typeof input.length === 'number') {
+          for (var i = 0; i < input.length; i++) { result[input[i][0]] = input[i][1]; }
+        } else if (input) {
+          for (var key in input) { result[key] = String(input[key]); }
+        }
+      } catch (e) {}
+      return result;
+    }
+    if (nativeFetch) {
+      window.fetch = function (input, init) {
+        var url = '';
+        try { url = typeof input === 'string' ? input : (input && input.url) || String(input); } catch (e) {}
+        if (!/^https:\\/\\//i.test(url)) return nativeFetch(input, init);
+        var id = 'f' + (++state.fetchSeq);
+        var headers = {};
+        try { headers = headerObject(init && init.headers); } catch (e) {}
+        if (!headers['Content-Type'] && !headers['content-type'] && init && init.body) {
+          headers['Content-Type'] = 'application/json';
+        }
+        var body = null;
+        try {
+          if (init && init.body != null) {
+            body = typeof init.body === 'string' ? init.body : String(init.body);
+          }
+        } catch (e) {}
+        return new Promise(function (resolve, reject) {
+          state.resolvers[id] = { resolve: resolve, reject: reject };
+          parent.postMessage({
+            source: 'lithe-codebuddy-webview',
+            handle: handle,
+            type: 'proxy-fetch',
+            id: id,
+            url: url,
+            method: (init && init.method) || 'GET',
+            headers: headers,
+            body: body,
+          }, '*');
+          setTimeout(function () {
+            if (state.resolvers[id]) {
+              delete state.resolvers[id];
+              reject(new TypeError('proxy fetch timed out: ' + url));
+            }
+          }, 60000);
+        });
+      };
+    }
     window.addEventListener('message', function (event) {
       var data = event.data;
+      if (data && data.type === 'proxy-fetch-result' && state.resolvers[data.id]) {
+        var pending = state.resolvers[data.id];
+        delete state.resolvers[data.id];
+        if (data.error) {
+          pending.reject(new TypeError(data.error));
+        } else {
+          try {
+            pending.resolve(new Response(data.body ?? '', {
+              status: data.status || 200,
+              statusText: data.statusText || '',
+              headers: data.headers || {},
+            }));
+          } catch (e) {
+            pending.reject(e);
+          }
+        }
+        return;
+      }
       if (data && data.source === 'lithe-codebuddy-host' && data.handle === handle) {
         (state.listeners || []).forEach(function (listener) { listener(data.message); });
       }

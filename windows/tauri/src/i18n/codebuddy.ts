@@ -24,6 +24,9 @@ export const codebuddyEnglish = {
     "Sign in to use AI chat and completion. A browser window will open to finish the sign-in; the panel updates automatically afterwards.",
   "codebuddy.signInAction": "Sign in with your browser",
   "codebuddy.signInLater": "Later",
+  "codebuddy.actionNewChat": "New chat",
+  "codebuddy.actionSettings": "Settings",
+  "codebuddy.actionLogout": "Sign out",
 };
 
 export const codebuddyChinese: Record<keyof typeof codebuddyEnglish, string> = {
@@ -49,4 +52,7 @@ export const codebuddyChinese: Record<keyof typeof codebuddyEnglish, string> = {
     "登录后即可使用 AI 聊天与代码补全。点击下方按钮将打开浏览器完成登录，登录后面板会自动更新。",
   "codebuddy.signInAction": "通过浏览器登录",
   "codebuddy.signInLater": "稍后再说",
+  "codebuddy.actionNewChat": "新建会话",
+  "codebuddy.actionSettings": "设置",
+  "codebuddy.actionLogout": "退出登录",
 };

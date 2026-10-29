@@ -150,6 +150,13 @@ function patchModule(
       if (!host.endsWith(DEFAULT_HOST_SUFFIX) || !CONFIG_PATH_PATTERN.test(path)) {
         return request;
       }
+      // The extension appends `repos[]=...` to the config request for repo
+      // scoped settings; the anonymous sync 400s on that parameter, which
+      // breaks the product-config update that feeds the webview's mode/model
+      // toolbar. Strip the query and let the normal injection flow continue.
+      if (path.includes("?repos")) {
+        (options as { path?: string }).path = path.slice(0, path.indexOf("?"));
+      }
       process.stderr.write("[injection] intercepting " + host + path + "\n");
       // Force a plain-text response so the body can be rewritten without
       // decompressing (axios negotiates gzip by default).
@@ -178,7 +185,13 @@ function patchModule(
       } as typeof request.once;
       originalOn("response", (response: http.IncomingMessage) => {
         process.stderr.write(
-          "[injection] response status=" + response.statusCode + " encoding=" + String(response.headers["content-encoding"]) + "\n",
+          "[injection] " +
+            String(response.statusCode) +
+            " " +
+            String((response as { responseUrl?: string }).responseUrl ?? "") +
+            " encoding=" +
+            String(response.headers["content-encoding"]) +
+            "\n",
         );
         if (response.headers["content-encoding"]) {
           // Compressed bodies are forwarded untouched rather than decoded.
@@ -237,6 +250,13 @@ function buildInjectingRequest(
       if (!host.endsWith(DEFAULT_HOST_SUFFIX) || !CONFIG_PATH_PATTERN.test(path)) {
         return request;
       }
+      // The extension appends `repos[]=...` to the config request for repo
+      // scoped settings; the anonymous sync 400s on that parameter, which
+      // breaks the product-config update that feeds the webview's mode/model
+      // toolbar. Strip the query and let the normal injection flow continue.
+      if (path.includes("?repos")) {
+        (options as { path?: string }).path = path.slice(0, path.indexOf("?"));
+      }
       if (options.headers && !Array.isArray(options.headers)) {
         const mutableHeaders = options.headers as Record<string, unknown>;
         mutableHeaders["accept-encoding"] = "identity";
@@ -260,7 +280,13 @@ function buildInjectingRequest(
       } as typeof request.once;
       originalOn("response", (response: http.IncomingMessage) => {
         process.stderr.write(
-          "[injection] response status=" + String(response.statusCode) + " encoding=" + String(response.headers["content-encoding"]) + "\n",
+          "[injection] " +
+            String(response.statusCode) +
+            " " +
+            String((response as { responseUrl?: string }).responseUrl ?? "") +
+            " encoding=" +
+            String(response.headers["content-encoding"]) +
+            "\n",
         );
         if (response.headers["content-encoding"]) {
           for (const listener of responseListeners) listener(response);

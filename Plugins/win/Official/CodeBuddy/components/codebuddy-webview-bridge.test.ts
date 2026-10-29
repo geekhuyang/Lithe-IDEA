@@ -69,6 +69,18 @@ test("the page policy allows the asset origin for styles, images and fonts", () 
   expect(widenWebviewCsp(widened, "http://asset.localhost")).toBe(widened);
 });
 
+test("connect-src opens every https endpoint for the chat page's API calls", () => {
+  const html =
+    '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; ' +
+    'connect-src ws: wss: https://galileotelemetry.tencent.com"/>';
+  const widened = widenWebviewCsp(html, "http://asset.localhost");
+  expect(widened).toContain(
+    "connect-src ws: wss: https://galileotelemetry.tencent.com https: http://asset.localhost",
+  );
+  // Widening twice does not duplicate the additions.
+  expect(widenWebviewCsp(widened, "http://asset.localhost")).toBe(widened);
+});
+
 test("the bridge script is injected with the page nonce and relays by handle", () => {
   const html =
     '<html><head><meta http-equiv="Content-Security-Policy" content="script-src \'nonce-n1\'"/></head><body>chat</body></html>';

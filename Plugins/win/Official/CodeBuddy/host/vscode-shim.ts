@@ -13,6 +13,11 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import type { Bridge } from "./bridge";
 import { createPersistentState } from "./persistent-state";
+import {
+  createWorkspaceLayer,
+  type TerminalOptions,
+  type WorkspaceEditRecorder,
+} from "./workspace-impl";
 
 export interface ExtensionContextLike {
   subscriptions: { dispose(): void }[];
@@ -95,6 +100,9 @@ export function createVscodeShim(options: {
   const workspaceStateStore = createPersistentState(storageDir, "workspace-state.json");
   // Sessions live in secrets; persist them or every restart asks for sign-in.
   const secretsStore = createPersistentState(storageDir, "secrets.json");
+  // Real filesystem, edit, configuration and terminal implementations backing
+  // the extension's agent tools (workspace.fs, applyEdit, findFiles, ...).
+  const workspaceLayer = createWorkspaceLayer({ extensionRoot, storageDir, bridge });
 
   const Uri = {
     file: (p: string) => uri(p),
@@ -433,14 +441,21 @@ export function createVscodeShim(options: {
     onDidChangeTextEditorViewColumn: new EventEmitter().event,
     onDidChangeVisibleTextEditors: new EventEmitter().event,
     onDidChangeActiveTerminal: new EventEmitter().event,
-    onDidOpenTerminal: new EventEmitter().event,
-    onDidCloseTerminal: new EventEmitter().event,
+    onDidOpenTerminal: workspaceLayer.terminals.onDidOpenTerminal.event,
+    onDidCloseTerminal: workspaceLayer.terminals.onDidCloseTerminal.event,
     onDidChangeTerminalState: new EventEmitter().event,
     onDidWriteTerminalData: new EventEmitter().event,
+    onDidStartTerminalShellExecution: workspaceLayer.terminals.onDidStartTerminalShellExecution.event,
+    onDidEndTerminalShellExecution: workspaceLayer.terminals.onDidEndTerminalShellExecution.event,
+    onDidChangeTerminalShellIntegration: new EventEmitter().event,
     activeTextEditor: undefined as unknown,
     visibleTextEditors: [] as unknown[],
-    terminals: [] as unknown[],
-    activeTerminal: undefined as unknown,
+    get terminals() {
+      return workspaceLayer.terminals.getTerminals();
+    },
+    get activeTerminal() {
+      return workspaceLayer.terminals.getActiveTerminal();
+    },
     tabGroups: {
       all: [] as unknown[],
       activeTabGroup: undefined as unknown,
@@ -452,17 +467,29 @@ export function createVscodeShim(options: {
   };
 
   // --- workspace --------------------------------------------------------------
+  const configurationChanged = new EventEmitter<{
+    affectsConfiguration: (section: string) => boolean;
+  }>();
+  workspaceLayer.configuration.onDidChangeConfiguration.event((event) =>
+    configurationChanged.fire(event),
+  );
+  const workspaceFoldersChanged = new EventEmitter<unknown>();
+  workspaceLayer.onWorkspaceRootChanged(() =>
+    workspaceFoldersChanged.fire(undefined),
+  );
+
   const workspace = {
-    workspaceFolders: undefined as unknown,
-    name: undefined as string | undefined,
+    isTrusted: true,
+    get workspaceFolders() {
+      return workspaceLayer.getWorkspaceFolders();
+    },
+    get name() {
+      return workspaceLayer.getWorkspaceName();
+    },
     workspaceFile: undefined as unknown,
-    getConfiguration: () => ({
-      get: (_key: string, defaultValue?: unknown) => defaultValue,
-      has: () => false,
-      inspect: () => undefined,
-      update: async () => undefined,
-    }),
-    onDidChangeConfiguration: new EventEmitter().event,
+    getConfiguration: (section?: string, _scope?: unknown) =>
+      workspaceLayer.configuration.getConfiguration(section),
+    onDidChangeConfiguration: configurationChanged.event,
     onDidOpenTextDocument: new EventEmitter().event,
     onDidCloseTextDocument: new EventEmitter().event,
     onDidChangeTextDocument: new EventEmitter().event,
@@ -474,18 +501,15 @@ export function createVscodeShim(options: {
     onWillCreateFiles: new EventEmitter().event,
     onWillDeleteFiles: new EventEmitter().event,
     onWillRenameFiles: new EventEmitter().event,
-    onDidChangeWorkspaceFolders: new EventEmitter().event,
-    textDocuments: [] as unknown[],
-    openTextDocument: async (input: unknown) =>
-      uri(
-        typeof input === "string"
-          ? input
-          : ((input as { uri?: { fsPath: string } })?.uri?.fsPath ?? "file"),
-      ),
-    asRelativePath: (target: unknown) => {
-      const value = typeof target === "string" ? target : (target as { fsPath: string }).fsPath;
-      return value.replace(/\\/g, "/");
+    onDidChangeWorkspaceFolders: workspaceFoldersChanged.event,
+    get textDocuments() {
+      return workspaceLayer.getTextDocuments();
     },
+    openTextDocument: (input: unknown) => workspaceLayer.openTextDocument(input),
+    findFiles: (include?: unknown, exclude?: unknown, maxResults?: number) =>
+      workspaceLayer.findFiles(include, exclude, maxResults),
+    asRelativePath: (target: unknown, includeWorkspaceFolder?: boolean) =>
+      workspaceLayer.asRelativePath(target, includeWorkspaceFolder),
     registerTextDocumentContentProvider: () => new Disposable(),
     registerFileSystemProvider: () => new Disposable(),
     registerTaskProvider: () => new Disposable(),
@@ -496,23 +520,11 @@ export function createVscodeShim(options: {
     registerPortAttributesProvider: () => new Disposable(),
     registerTerminalLinkProvider: () => new Disposable(),
     registerTerminalQuickFixProvider: () => new Disposable(),
-    fs: {
-      readFile: async () => new Uint8Array(),
-      readTextFile: async () => "",
-      writeFile: async () => undefined,
-      writeTextFile: async () => undefined,
-      stat: async () => ({ type: 1, ctime: 0, mtime: 0, size: 0 }),
-      readDirectory: async () => [],
-      createDirectory: async () => undefined,
-      delete: async () => undefined,
-      rename: async () => undefined,
-      copy: async () => undefined,
-      isWritableFileSystem: () => true,
-    },
-    getWorkspaceFolder: () => undefined,
+    fs: workspaceLayer.fs,
+    getWorkspaceFolder: (target: unknown) => workspaceLayer.getWorkspaceFolder(target),
     updateWorkspaceFolders: async () => false,
     saveAll: async () => false,
-    applyEdit: async () => true,
+    applyEdit: (edit: unknown) => workspaceLayer.applyEdit(edit),
     // Phase-one file watching: the vendored extension watches the MCP settings
     // file via `new RelativePattern(...)` + `createFileSystemWatcher`. We return
     // a no-op watcher so activation succeeds; live file-change events are a
@@ -738,26 +750,20 @@ export function createVscodeShim(options: {
   };
 
   const terminal = {
-    createTerminal: () => ({
-      name: "",
-      processId: Promise.resolve(undefined),
-      creationOptions: {} as unknown,
-      exitStatus: undefined as unknown,
-      state: undefined as unknown,
-      shellIntegration: undefined as unknown,
-      show: () => undefined,
-      hide: () => undefined,
-      sendText: () => undefined,
-      dispose: () => undefined,
-    }),
-    onDidCloseTerminal: new EventEmitter().event,
-    onDidOpenTerminal: new EventEmitter().event,
+    createTerminal: (creationOptions?: TerminalOptions) =>
+      workspaceLayer.terminals.createTerminal(creationOptions),
+    onDidCloseTerminal: workspaceLayer.terminals.onDidCloseTerminal.event,
+    onDidOpenTerminal: workspaceLayer.terminals.onDidOpenTerminal.event,
     onDidChangeActiveTerminal: new EventEmitter().event,
     onDidChangeTerminalState: new EventEmitter().event,
     onDidWriteTerminalData: new EventEmitter().event,
     onDidChangeShellIntegration: new EventEmitter().event,
-    terminals: [] as unknown[],
-    activeTerminal: undefined as unknown,
+    get terminals() {
+      return workspaceLayer.terminals.getTerminals();
+    },
+    get activeTerminal() {
+      return workspaceLayer.terminals.getActiveTerminal();
+    },
     defaultProfile: undefined as unknown,
   };
 
@@ -890,29 +896,48 @@ export function createVscodeShim(options: {
       return new TextEdit(range, "");
     }
   }
+  // `WorkspaceEdit` records real file operations; `workspace.applyEdit` writes
+  // them to disk (see ./workspace-impl). The shim-side class delegates to the
+  // layer implementation so the extension and the applier share one shape.
   class WorkspaceEdit {
-    private edits: { uri: unknown; edits: unknown }[] = [];
-    replace(uri: unknown, range: Range, newText: string): this {
-      this.edits.push({ uri, edits: [TextEdit.replace(range, newText)] });
+    private readonly recorder: WorkspaceEditRecorder = new workspaceLayer.WorkspaceEdit();
+    replace(editUri: unknown, range: Range, newText: string): this {
+      this.recorder.replace(editUri, range, newText);
       return this;
     }
-    insert(uri: unknown, position: Position, newText: string): this {
-      this.edits.push({ uri, edits: [TextEdit.insert(position, newText)] });
+    insert(editUri: unknown, position: Position, newText: string): this {
+      this.recorder.insert(editUri, position, newText);
       return this;
     }
-    delete(uri: unknown, range: Range): this {
-      this.edits.push({ uri, edits: [TextEdit.delete(range)] });
+    delete(editUri: unknown, range: Range): this {
+      this.recorder.delete(editUri, range);
       return this;
     }
-    set(uri: unknown, edits: unknown[]): this {
-      this.edits.push({ uri, edits });
+    set(editUri: unknown, edits: unknown): this {
+      this.recorder.set(editUri, edits);
+      return this;
+    }
+    createFile(editUri: unknown, options?: { overwrite?: boolean; ignoreIfExists?: boolean }): this {
+      this.recorder.createFile(editUri, options);
+      return this;
+    }
+    deleteFile(editUri: unknown, options?: { recursive?: boolean; ignoreIfNotExists?: boolean }): this {
+      this.recorder.deleteFile(editUri, options);
+      return this;
+    }
+    renameFile(oldUri: unknown, newUri: unknown, options?: { overwrite?: boolean }): this {
+      this.recorder.renameFile(oldUri, newUri, options);
       return this;
     }
     get size(): number {
-      return this.edits.length;
+      return this.recorder.size;
     }
     entries(): { uri: unknown; edits: unknown }[] {
-      return this.edits;
+      return this.recorder.entries();
+    }
+    operations(): unknown {
+      return (
+        this.recorder as unknown as { operations?: () => unknown[] }).operations?.() ?? [];
     }
   }
   class ThemeColor {
@@ -1194,6 +1219,19 @@ export function createVscodeShim(options: {
         process.stderr.write("[shim] threw " + id + ": " + String(error).slice(0, 200) + "\n");
         throw error;
       });
+  });
+
+  // The frontend pushes the active workspace root once the host is ready; every
+  // relative-path resolution (workspaceFolders, findFiles, terminal cwd) hangs
+  // off it.
+  bridge.onCall("workspace.setRoot", (params) => {
+    const root = String((params as { path?: string } | null)?.path ?? "");
+    if (root && !fs.existsSync(root)) {
+      process.stderr.write("[shim] workspace.setRoot: missing directory " + root + "\n");
+      return false;
+    }
+    workspaceLayer.setWorkspaceRoot(root || undefined);
+    return true;
   });
 
   const context: ExtensionContextLike = {
